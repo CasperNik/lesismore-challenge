@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="495898827">
+    <data-source source="LOCAL" name="Rails lesismore-challenge: development" uuid="ecda68c7-54a4-405a-9a6f-b981bb70ef39">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/lesismore_development_delme</jdbc-url>
+      <user-name>pguser</user-name>
+      <user-password>dfdadfcddfdfdfd9dfcfdfd8</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails lesismore-challenge: test" uuid="24b40b42-8d14-4ec9-a3a9-3f19b2d03f6d">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:lesismore_development_delme</jdbc-url>
+      <user-name>somebody</user-name>
+      <user-password>dfd9dfc5dfc7dfcfdfdedfc2dfc3dfc4dfcd</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails lesismore-challenge: production" uuid="a3e97ce2-9538-4f2f-a8a7-033644b533f2">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:lesismore_development_delme</jdbc-url>
+      <user-name>somebody</user-name>
+      <user-password>dfd9dfc5dfc7dfcfdfdedfc2dfc3dfc4dfcd</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

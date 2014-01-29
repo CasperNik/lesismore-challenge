@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails lesismore-challenge: development" uuid="ecda68c7-54a4-405a-9a6f-b981bb70ef39">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails lesismore-challenge: test" uuid="24b40b42-8d14-4ec9-a3a9-3f19b2d03f6d">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails lesismore-challenge: production" uuid="a3e97ce2-9538-4f2f-a8a7-033644b533f2">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

@@ -1,0 +1,97 @@
+o: ActiveSupport::Cache::Entry:@valueI"‡ <p class="month">Ruby</p>
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/1">Personal Gemfiles</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/2">Ruby Hash of Array idioms</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/6">Simple Ruby Enums</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/9">Putting a Rails test database on Ramdisk</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/12">Hirb and IRBTools</a></li>
+             </ul>
+            </div>
+          <p class="month">Meta</p>
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/3">Ruby Versus C#</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/8">Welcome</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/10">About This Website</a></li>
+             </ul>
+            </div>
+          <p class="month">Diabetes</p>
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/4">Insulin Tips</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/14">Reservoirs</a></li>
+             </ul>
+            </div>
+          <p class="month">Ubuntu</p>
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/5">Ubuntu File Sharing</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/13">Secure Shell with Keys</a></li>
+             </ul>
+            </div>
+          
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/15">Squid 3 Transparent Proxy</a></li>
+             </ul>
+            </div>
+          <p class="month">Interactive Fiction</p>
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/7">Vim and Inform 7</a></li>
+             </ul>
+            </div>
+          <p class="month">Darwin</p>
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/11">Instiki on OSX</a></li>
+             </ul>
+            </div>
+          <p class="month">Minecraft</p>
+            <div class="entrylist">
+              <ul>
+                <li><a href="/posts/16">My Minecraft server</a></li>
+             </ul>
+            </div>
+          :ET:@created_atf1390990823.6907396:@expires_in0

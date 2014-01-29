@@ -1,0 +1,786 @@
+
+---
+posts:
+  columns:
+  - id
+  - title
+  - body
+  - created_at
+  - updated_at
+  - tag
+  records: 
+  - - '1'
+    - Personal Gemfiles
+    - |-
+      When doing Rails development its sometimes handy to have your own additions to the team's Gemfile. This is not as easy to accomplish as you might imagine.
+
+      First you need an environment variable, because the corresponding Bundler config option doesn't work:
+      <% coderay(:lang => "bash", :tab_width => 2) do -%>
+      export BUNDLE_GEMFILE=Gemfile.mine
+      <% end -%>
+
+      Then you need your personal Gemfile.mine:
+
+      <% coderay(:lang => "ruby", :tab_width => 2) do -%>
+      eval(IO.read('Gemfile'), binding)
+      gem 'mongrel', '>= 1.2.0.pre2'
+      gem 'irbtools'
+      gem 'irbtools-more'
+      <% end -%>
+
+      The eval is because 'load' and 'require' don't work in Gemfiles.
+    - '2012-07-31 12:00:00'
+    - '2012-07-31 12:00:00'
+    - Ruby
+  - - '2'
+    - Ruby Hash of Array idioms
+    - "I often need a hash of arrays in Ruby. So for example, I can have:\n\n<% coderay(:lang
+      => \"ruby\", :tab_width => 2) do -%>\nmonths = {\"Feb\"=>[\"Article1\", \"Article2\",
+      \"Article3\"], \n          \"Mar\"=>[\"Article4\", \"Article5\"]}\n<% end -%>\n\nNow
+      if I am reading through an array of articles, I can set up\nmy hash like so:\n\n<%
+      coderay(:lang => \"ruby\", :tab_width => 2) do -%>\nclass Article\n\tattr_accessor
+      :name, :month\n\n\tdef initialize(name, month)\n\t\t@name = name\n\t\t@month
+      = month\n\tend\nend\n\narticles = [\n\tArticle.new(\"Article1\", \"Feb\"), \n\tArticle.new(\"Article2\",
+      \"Feb\"), \n\tArticle.new(\"Article3\", \"Feb\"), \n\tArticle.new(\"Article4\",
+      \"Mar\"), \n\tArticle.new(\"Article5\", \"Mar\"), \n]\n\nmonths = {}\narticles.each
+      do |a|\n\tmonths[a.month] ||= []\n\tmonths[a.month] << a.name\nend\n\np months\n<%
+      end -%>\n\nThis works great. For each article, we set a specific hash key \nto
+      an empty array, but only if it is currently nil. That's\nwhat this does:\n\n<%
+      coderay(:lang => \"ruby\", :tab_width => 2) do -%>\n\tmonths[a.month] ||= []\n<%
+      end -%>\n\nThen we add the article's name to the array:\n\n<% coderay(:lang
+      => \"ruby\", :tab_width => 2) do -%>\n\tmonths[a.month] << a.name\n<% end -%>\n\nThere
+      are more ways of doing that which might be better. You can \ncombine the two
+      lines:\n\n<% coderay(:lang => \"ruby\", :tab_width => 2) do -%>\nmonths = {}\narticles.each
+      do |a|\n\t(months[a.month] ||= [])<< a.name\nend\n<% end -%>\n\nAnother way
+      is to provide a default for new hash values.\nWhen we create the hash (months
+      = {}), we can specify a block \nwhich Ruby will use to generate default values
+      in the hash. \nThis makes things nicer:\n\n<% coderay(:lang => \"ruby\", :tab_width
+      => 2) do -%>\nmonths = Hash.new{|h, k| h[k] = []}\narticles.each do |a|\n\tmonths[a.month]
+      << a.name\nend\n<% end -%>\n\nAlso, this way is a bit faster, since theoretically
+      we are not\ntesting each hash element for emptiness each time we add a value\nto
+      the array. A benchmark does indeed show it to be slightly faster -\nthough you
+      need truly huge arrays to see any difference."
+    - '2008-01-31 11:00:00'
+    - '2008-01-31 11:00:00'
+    - Ruby
+  - - '3'
+    - Ruby Versus C#
+    - "Every now and again as I program in C# I think \"this would be beautiful in
+      Ruby\". I like C# but I like Ruby more. Later, someone always asks me \"what's
+      so great about Ruby?\" and I can only remember two things, and they go \"is
+      that all??\".\r\n\r\nSo I am making a list of a few things to remind me.\r\n\r\nRDoc
+      vs. XMLDoc\r\n===============\r\n\r\nIntellisense is nice, but XML is not so
+      human readable. And try inserting a newline in your Intellisense! RDoc is much
+      more readable, before _and_ after compilation - and that's what documentation
+      is all about. \r\n\r\nOf course Intellisense is a big plus, especially when
+      using huge libraries like OS API's, so this may outweigh the benefits of RDoc.
+      I know that one of my colleagues has said he'd hate to use any language that
+      doesn't have Intellisense... and that gives me a strange, sick feeling in my
+      stomach for some reason.\r\n\r\nSome Ruby IDE's are trying some Intellisense
+      but because variables can be any object at any time, much of it can't be done.\r\n\r\nDefault
+      parameters\r\n==================\r\n\r\nApparently default parameters are not
+      permitted because once they are compiled in, \r\n[the defaults cannot be changed
+      without recompiling.](http://blogs.msdn.com/csharpfaq/archive/2004/03/07/85556.aspx)\r\n\r\nSeems
+      silly to me! I can't tell you the reams of code I have to write just to curry
+      parameters just because I can't specify defaults - and once curried, the parameters
+      are unchangeable without compiling anyway. I guess they are trying to force
+      people to put defaults into config files, causing even more bloat.\r\n\r\nBah!
+      Less is more!\r\n\r\nThe Uniform Access Principle\r\n============================\r\n\r\nMethod
+      calls have return values. Properties return values. Why the brackets() to differentiate
+      them? If you add the ability to \"assign\" to a method, methods and properties
+      are the same to the outside world. Method versus property is just another annoying
+      way to increase coupling and there's no difference in Ruby.\r\n\r\nFor more
+      details, see the [uniform access principle](http://en.wikipedia.org/wiki/Uniform_access_principle),
+      put forth by Bertrand Meyer.\r\n\r\nObject\r\n======\r\n\r\nOne great thing
+      about C# is that an object of type Object can store any object. This means we
+      can have an ArrayList which stores different types of objects:\r\n\r\n<% coderay(:lang
+      => \"cpp\", :tab_width => 2) do -%>\r\n  ArrayList a = new ArrayList();\r\n
+      \ a.Add(\"Four\");\r\n  a.Add(new Random());\r\n\r\n  Console.WriteLine(((String)
+      a[0]).Length);\r\n  Console.WriteLine(((Random) a[1]).Next());\r\n<% end -%>\r\n\r\nOf
+      course, you can't call any useful methods on your Object-ified objects until
+      you cast them back to their original types. \r\n\r\nWhat could be the reason
+      for that? Obviously in the above code the compiler doesn't know what the type
+      of a [0] until runtime, since it only throws an exception at runtime if it turns
+      out that a [0] doesn't have a Length() method. However, the compiler wants to
+      check at compile time that the type I am casting to (String) has a Length()
+      method. So apart from Intellisense, what purpose could the cast possibly serve?
+      To verify that there is *any* object in existence that may have a Length() method?\r\n\r\nIn
+      Ruby:\r\n<% coderay(:lang => \"ruby\", :tab_width => 2) do -%>\r\na = [\"four\",
+      proc{rand}]\r\nputs a[0].length\r\nputs a[1].call\r\n<% end -%>\r\n\r\nEnums\r\n=====\r\n\r\nIn
+      C# you have the wonderful *enum* type, allowing you to make a variable that
+      can store any of a list of symbols. Unfortunately, if you want to convert one
+      of the options to a number, you once again need to cast.\r\n\r\nEven if you
+      tell the compiler that the underlying variable holding the symbol should be
+      of a particular type, it is no less forgiving.\r\n\r\nHere is my enum, stored
+      internally as a short:\r\n\r\n<% coderay(:lang => \"cpp\", :tab_width => 2)
+      do -%>\r\nprivate enum tag :short { reason = 1, unitStatusFlags = 3, gpsStatusFlags
+      = 4 };\r\n<% end -%>\r\n\r\nHere is where I have a combination of the *Object*
+      problem above, and the casting of the enum back to a short:\r\n\r\n<% coderay(:lang
+      => \"cpp\", :tab_width => 2) do -%>\r\n((UmmpByte)ummp.tagObjects[(short)tag.unitStatusFlags][0]).Byte;\r\n<%
+      end -%>\r\n\r\nEasy to read, huh?\r\n\r\nBy the way, Ruby has no built in enum,
+      but it's easy to make one: <%= link_to_page(:title => \"Simple Ruby Enums\")
+      %>\r\n\r\nRun Forest Run\r\n==============\r\n\r\nC# is catching up, every new
+      revision seems to add more of Ruby's features. One day C# is going to be a half
+      baked, ugly version of Ruby that only runs properly on Microsoft platforms.
+      By then I'll have been using real Ruby for decades!"
+    - '2007-04-30 12:00:00'
+    - '2013-05-31 10:38:21'
+    - Meta
+  - - '4'
+    - Insulin Tips
+    - "I am the father of a young type-1 diabetic. This is a series of articles hopefully
+      providing\r\nsome hard-won advice to others who are dealing with this.\r\n\r\nStandard
+      disclaimer\r\n-------------------\r\n\r\nBy now you probably know that if you
+      are the parent of a young diabetic, their health is up to you! \r\nI am not
+      medically qualified, so you follow my advice at your own risk.\r\n\r\nStill,
+      I hope you can learn from some of our pain.\r\n\r\nBear in mind that these articles
+      will in some cases reflect the way things are in South Africa, which is \r\nwhere
+      we are. I first wrote this late in 2007 when Jenna (my daughter) was almost
+      three years old.\r\n\r\nThe pump\r\n--------\r\n\r\nWe started out using injections,
+      and while you may have the option to start with an insulin pump,\r\nwe learned
+      to get a good feel for the effects of a certain dosage of insulin. Using syringes
+      for\r\na little while also helps you to get some practice for when you have
+      a problem with the pump.\r\nWhen that time comes, you will probably have to
+      be able to give an accurately measured injection \r\nwithout delay.\r\n\r\n<p
+      class=\"image\"></p>\r\n\r\n![The Paradigm Insulin Pump](/assets/paradigm.jpg)\r\n\r\n###
+      Getting the right pump ###\r\n\r\nWe have a [MiniMed Paradigm pump](http://www.minimed.com/products/index.html)
+      that can do real-time \r\nglucose monitoring that we could never afford. This
+      means we may have paid for more than we really \r\nneed. This pump can deliver
+      insulin in 0.1 unit increments, which is good, but there are pumps \r\nthat
+      can do smaller. This is especially important for a small child. Because we can't
+      deliver less \r\nthan that, we need to dilute insulin, which can be a chore.\r\n\r\nYour
+      doctor may take over when it comes to choosing the pump, but I recommend you
+      discuss options \r\nwith him or her. Look at price (even if your medical scheme
+      pays) and be aware that the price of the \r\npump is small when compared with
+      monthly sets and reservoirs. Look at the dosage sizes that the pump\r\ncan provide.
+      Try not to pay for features you don't need.\r\n\r\nCost is more of a problem
+      in Africa, and I see that we pay quite a bit more than the converted dollar
+      \r\nand pound prices overseas.\r\n\r\n### Connector conspiracies ###\r\n\r\nThe
+      Paradigm has a specific type of connector from their reservoirs which makes
+      it difficult to use \r\nnon-MiniMed infusion sets with the pump. You'd need
+      to get [alternative reservoirs](http://www.applieddiabetesresearch.org/)\r\nto
+      convert to the luer-lock standard. MiniMed may be innocent in this, but to me
+      it looks like marketing \r\nat the expense of people, and so I distrust them.
+      The fact that they provide such limited infusion set \r\noptions only compounds
+      this problem.\r\n\r\n*That said*, the pump has served us well, and revolutionised
+      Jenna's diabetes management. If \r\nthere's any way you can manage it, *I highly
+      recommend a pump over injections*, especially for \r\nsmall children and babies.\r\n\r\nReservoirs\r\n----------\r\n\r\nThe
+      reservoir is the mini-syringe inside the pump that holds the insulin. Since
+      our pump cannot deliver \r\nless than 0.1 units of insulin at a time, we dilute
+      the insulin with saline. This involves me buying a lot \r\nof saline solution
+      intended for contact lenses and mangling the reservoir to allow me to mix insulin.
+      Since \r\nthe saline cannot be reused after the plastic container is punctured,
+      the smaller the better.\r\n\r\nThe best I've seen are 2ml plastic saline packs
+      made for injections, which \r\nI bought at a hospital (UNITAS in Centurion).\r\n\r\nYou
+      should definitely discuss any diluting you want to do with your doctor. We could
+      not get correct basal rates \r\nprogrammed into the pump without diluting. After
+      diluting, Jenna's blood sugar was a lot more stable.\r\n\r\nBear in mind that
+      the small dosage problem only applies to young children who need very small\r\namounts
+      of insulin.\r\n\r\nFor detailed information on filling reservoirs, see the <%=
+      link_to_page(\"reservoirs article.\", :title => \"Reservoirs\") %>\r\n\r\nInfusion
+      sets\r\n-------------\r\n\r\nInfusion sets are the devices which hold the end
+      of insulin tubing from the pump under the skin. They consist of \r\na plaster
+      part to hold them down, a needle (initially), and a cannula, which is the short
+      tube which is actually \r\ninserted under the skin. The needle just aids the
+      insertion of the cannula and is removed afterwards. A set usually \r\nstays
+      on for three days, unless the cannula is made of metal - then it is supposed
+      to last two days. We have not \r\ntried metal cannulas, we use the flexible
+      plastic ones.\r\n\r\nThe needle is a bit bigger than that of an insulin syringe,
+      so it can be more painful, but that's only one needle\r\nover three days instead
+      of nine or more. Also, food can be eaten and insulin can be delivered at any
+      time, which \r\nmeans you'll never let your child endure a high to avoid a needle.
+      It is very important to avoid highs for long-term \r\ngood health in a diabetic.\r\n\r\n###
+      Specific sets ###\r\n\r\nWe started on a Paradigm Quick-Set infusion set, with
+      a 6mm cannula. This worked for a while, but we got a lot of\r\nkinked cannulas
+      because Jenna seems to have about 5mm of body fat on average. Often, the kinks
+      would block the \r\nflow, and since the pump delivers such tiny amounts of insulin
+      for a small child, it cannot detect a blockage, \r\nimplying a guess-the-high
+      session in a few hour's time.\r\n\r\nOnce we had four blocked cannulas in a
+      row over a space of two days, many backup syringes and near DKA highs. \r\nAfter
+      that we switched to Silhouette sets which have not yet failed once. These sets
+      go in at 30 degrees, making \r\ninsertion a lot more hair raising, but then
+      you can see the cannula entry point and never have to wonder if it is \r\nsitting
+      above the skin. When it touches muscle tissue below the fat layer, it tends
+      to bend and not block. \r\n\r\n### Insertion ###\r\n\r\nInsertion of these is
+      with a device called a Sil-Serter, or by hand. Although we were trained to do
+      it by hand, \r\nI found it really difficult to control the speed and angle correctly.
+      There's also quite some resistance to a 9mm,\r\nfairly thick needle, and I just
+      didn't have the nerve. The Sil-Serter seems to work well, although sometimes
+      the angle\r\ngoes a bit wrong (or too deep) under the skin and perhaps that's
+      the down-side. Even so, we haven't had a blockage yet.\r\n\r\nWhen using the
+      Serter, I have had the needle pierce the edge of the set's plaster, so I fold
+      the forward-facing piece \r\nof plaster back over on itself and hold it there
+      with a tiny bit of prestik.\r\n\r\nOnce in, I remove the backing from that front
+      piece of plaster and stick it down. Then I open the crocodile clamp and \r\nmove
+      the rest of the set out of the Serter *without lifting it*. Then I slowly remove
+      the needle using my left hand to\r\nhold the set. I then quickly plug in the
+      tube and deliver the fixed prime to avoid any blood drying and forming a block\r\nin
+      the cannula.\r\n\r\n### The Emla miracle ###\r\n\r\nSet insertions can be painful,
+      and since they are not done as often as with a syringe, I think that makes them
+      worse. \r\nWe now use Emla anaesthetic cream before every insertion. This takes
+      more planning since it must be applied an hour \r\nbefore, but it makes the
+      ordeal much much easier. It is difficult to explain the need for regular needles
+      to a young \r\nchild, and Emla just makes things much better. I highly recommend
+      it if you can at all get it.\r\n\r\nWith Jenna, we draw a shape (of her choice)
+      on the site, being careful to not get ink where the needle must go. We \r\nfill
+      that in with lots of Emla and put a 3M  clear plastic plaster over it. She then
+      normally goes to sleep, since \r\nwe change it at night, and we do the insertion
+      while she sleeps. Sometimes she wakes, but often she doesn't feel it.\r\n\r\nSome
+      people like to do insertions in the morning so they can monitor blood sugar
+      during the day, but we almost always\r\ntest at 3am anyway, so we prefer doing
+      it while she sleeps. With Emla she often doesn't wake. Without Emla though,
+      I \r\nwould be really against trying to insert while the child sleeps. Though
+      you might get away with it a few times, if \r\nthey often wake from unexpected
+      needle stab wounds they are bound to develop fear and insomnia. I think you'll
+      be \r\ndoing a much greater damage than by just trying to coach the child through
+      the process, like we used to have to do."
+    - '2008-04-30 12:00:00'
+    - '2013-05-31 11:58:31'
+    - Diabetes
+  - - '5'
+    - Ubuntu File Sharing
+    - "This article is relevant to Ubuntu Feisty (7.04), Gutsy (7.10) and perhaps
+      others.\n\nIt seems that Ubuntu now *almost* has very simple file sharing for
+      Windows machines. I could not find a way to do everything from the Desktop GUI,
+      which was sad, because command line prompts don't cut it for the command-line
+      fearing masses.\n\nStill, it was pretty easy.\n\nOn Ubuntu \n---------\n\n 1.
+      Browse to the folder you want to share, right click and select \"Share Folder\".\n
+      1. If Samba is not installed, you'll get a box that asks if you'd like to install
+      file sharing. Select \"Windows networks support\" and click \"Install services\"\n
+      1. After the service is installed, give the share a name and a comment if you
+      like. Select whether to make it read-only or not.\n 1. Now you need to drop
+      to the command line and give your user a Samba password. Open a terminal and
+      type *sudo smbpasswd -a [username]* - where [username] is your normal Ubuntu
+      username\n 1. Follow the prompts to enter a password to be used from Windows\n\nOn
+      Windows\n----------\nNow, on the Windows machine, browse to your Ubuntu machine
+      by going to Start->Run and entering \\\\10.0.0.1, where the 10.0.0.1 is the
+      IP address of the Ubuntu machine. You should be able to access the share using
+      the username and password you entered.\n\nPossible problems\n-----------------\n\n
+      1. If you toggle *read only* for a folder, you need to restart SAMBA for the
+      changes to take effect. In a terminal type */etc/init.d/samba restart*\n 1.
+      You need basic IP networking up before this will work. That is you'll need to
+      \ know the IP address of your Ubuntu machine and be able to ping it from the
+      Windows machine. Your Ubuntu machine's IP address can be found under System->Administration->Networking.
+      Your Windows machine will need an IP address in the same range. To ping, go
+      to the Windows command line (Start->Run->cmd), and enter \"ping 10.0.0.1\",
+      where 10.0.0.1 is the IP address of the Ubuntu machine."
+    - '2008-01-31 11:00:00'
+    - '2008-01-31 11:00:00'
+    - Ubuntu
+  - - '6'
+    - Simple Ruby Enums
+    - "Ruby has no built-in enums, but it is versatile enough for you to easily create
+      enums in a variety of styles.\n\nSimple symbol enums\n-------------------\n(from
+      Rohan Kini, [here](http://snippets.dzone.com/posts/show/2163))\n\nsymbol_enums.rb:\n\n<%
+      coderay(:lang => \"ruby\", :tab_width => 2) do -%>\nmodule Kernel\n\t# simple
+      (sequential) enumerated values\n\tdef enum(*syms)\n\t\tsyms.each { |s| const_set(s,
+      s.to_s) }\n\t\tconst_set(:DEFAULT, syms.first) unless syms.nil?\n\tend\nend\n<%
+      end -%>\n\nDeclare your enums:\n\n<% coderay(:lang => \"ruby\", :tab_width =>
+      2) do -%>\nrequire 'symbol_enums'\n\nmodule Constants\n\tmodule Gradient\n\t\tenum
+      :DOWNSLOPE, :LEVEL, :UPSLOPE\n\tend\n\n\tmodule TreeCover\n\t\tenum :GOOD, :BAD,
+      :OK\n\tend\n\n\tmodule TrafficDensity\n\t\tenum :LOW, :MEDIUM, :HIGH\n\tend\nend\n<%
+      end -%>\n\nUse them:\n\n<% coderay(:lang => \"ruby\", :tab_width => 2) do -%>\n
+      \   tree_cover = Constants::TreeCover::OK\n<% end -%>\n\nEnums with values\n-----------------\n(from
+      a posting by Brian Schroeder [here](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/150456))\n\nvalue_enums.rb:\n\n<%
+      coderay(:lang => \"ruby\", :tab_width => 2) do -%>\nclass Object\n\tdef self.enums(*args)\n\t\targs.flatten.each_with_index
+      do | const, i |\n\t\t\tclass_eval %(#{const} = #{i})\n\t\tend\n\tend\n\n\tdef
+      self.bitwise_enums(*args)\n\t\targs.flatten.each_with_index do | const, i |\n\t\t\tclass_eval
+      %(#{const} = #{2**i})\n\t\tend\n\tend\nend\n<% end -%>\n\nUse it:\n\n<% coderay(:lang
+      => \"ruby\", :tab_width => 2) do -%>\nrequire 'value_enums'\nclass Foo\n\tenums
+      %w(FOO BAR BAZ)\n\tbitwise_enums %w(ONE TWO FOUR EIGHT)\nend\n\np [Foo::FOO,
+      Foo::BAR, Foo::BAZ]\np [Foo::ONE, Foo::TWO, Foo::FOUR, Foo::EIGHT]\n<% end -%>\n\nOutput:\n\n
+      \   [0, 1, 2]\n    [1, 2, 4, 8]\n\nEnnumerable enums\n-----------------\n(taken
+      from [this posting](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/153907))\n\n<%
+      coderay(:lang => \"ruby\", :tab_width => 2) do -%>\n# Represents a C# style
+      enumeration of known values.\n#\n# Usage:\n# Color = Enum.new(:Red, :Green,
+      :Blue)\n# Color.is_a?(Enum) # => true\n# Color::Red.inspect # => \"Color::Red\"\n#
+      Color::Green.is_a?(Color) # => true\n# Color::Green.is_a?(Enum::Member) # =>
+      true\n# Color::Green.index # => 1\n# Color::Blue.enum # => Color\n# values =
+      [[255, 0, 0], [0, 255, 0], [0, 0, 255]]\n# values[Color::Green] # => [0, 255,
+      0]\n# Color[0] # => Color::Red\n# Color.size # => 3\n#\n# Enums are enumerable.
+      Enum::Members are comparable.\n\nclass Enum < Module \n\tclass Member < Module
+      \n\t\tattr_reader :enum, :index \n\n\t\tdef initialize(enum, index) \n\t\t\t@enum,
+      @index = enum, index \n\t\t\t# Allow Color::Red.is_a?(Color) \n\t\t\textend
+      enum \n\t\tend \n\t\t\n\t\t# Allow use of enum members as array indices \n\t\talias
+      :to_int :index \n\t\talias :to_i :index \n\t\t\n\t\t# Allow comparison by index
+      \n\t\tdef <=>(other)\n\t\t\t@index <=> other.index\n\t\tend\n\n\t\tinclude Comparable\n\tend\n\n\tdef
+      initialize(*symbols, &block)\n\t\t@members = []\n\t\tsymbols.each_with_index
+      do |symbol, index|\n\t\t\t# Allow Enum.new(:foo)\n\t\t\tsymbol = symbol.to_s.sub(/^[a-z]/){|letter|
+      letter.upcase}.to_sym\n\t\t\tmember = Enum::Member.new(self, index)\n\t\t\tconst_set(symbol,
+      member)\n\t\t\t@members << member \n\t\tend \n\t\tsuper(&block) \n\tend \n\t\t\n\tdef
+      [](index) \n\t\t@members[index] \n\tend \n\t\n\tdef size() \n\t\t@members.size
+      \n\tend \n\t\n\talias :length :size \n\t\n\tdef first(*args) \n\t\t@members.first(*args)
+      \n\tend \n\t\n\tdef last(*args) \n\t\t@members.last(*args) \n\tend \n\t\n\tdef
+      each(&block) \n\t\t@members.each(&block) \n\tend \n\t\n\tinclude Enumerable
+      \nend\n\n<% end -%>"
+    - '2008-01-31 11:00:00'
+    - '2008-01-31 11:00:00'
+    - Ruby
+  - - '7'
+    - Vim and Inform 7
+    - "These are hints for using Vim to edit Inform7 story files. These all work on
+      a Windows *Vim7* installation, but may work on others too.\r\n\r\nAutohotkey\r\n----------\r\n\r\nUser
+      *isd* in the [Interactive Fiction Usenet group](http://groups.google.com/group/rec.arts.int-fiction/topics)
+      wrote an [Autohotkey](http://www.autohotkey.com/) script that will navigate
+      to the Inform7 IDE and refresh the story file that you may have been editing
+      in Vim. Once loaded, the default hotkey is *right-shift+i* - but you can change
+      it to whatever you like.\r\n\r\nDownload the script [here](/downloads/inform-compile.zip).\r\n\r\nEditing
+      your vimrc file\r\n-----------------------\r\n\r\nYour vimrc file is your Vim
+      settings file. On Windows, mine is at *C:\\Documents and Settings\\lesliev\\_vimrc*,
+      but can just as easily be edited by going to *Edit->Startup* Settings in Vim's
+      menu.\r\n\r\nOn Linux I usually edit the system-wide config file at /etc/vim/vimrc,
+      otherwise you can create a personal vimrc in ~/.vimrc\r\n\r\nGetting rid of
+      the ^M ^M ^M's\r\n---------------------------\r\n\r\nEdit your vimrc and add
+      these:\r\n<pre>\r\nfiletype on\r\nset fileformats=mac,dos,unix\r\n</pre>\r\n\r\nVim
+      uses Mac style line endings, which terminates each line with 0x0D characters.
+      The *fileformats* setting enables the mac format, which Vim should then autodetect
+      in files that you open. You can query the current setting in Vim with *:set
+      fileformats?*.\r\n\r\nIf Vim does not autodetect the format, the file is usually
+      broken and you're not going to have much luck until you fix it. I have at least
+      once seen an Inform story.ni file that had a 0x0A character right at the end,
+      and when I tried to manually change to mac format (*:set ff=mac*), the ^M's
+      just changed to ^J's. The only fix I could find for that file was to open it
+      in a hex editor and remove the 0x0A character.\r\n\r\nGetting syntax highlighting\r\n---------------------------\r\n\r\n*
+      First, download the syntax file [here](/downloads/inform7-win.zip) and put it
+      in your Vim syntax directory (use [this](/downloads/inform7-unix.zip) on a unix
+      based system). \r\n\r\nOn a Windows installation, the directory is at *c:\\program
+      files\\vim\\vim70\\syntax*. On Linux, *man vim* should tell you all the paths.\r\n\r\n*
+      Second, tell Vim to turn on syntax highlighting whenever it can. Edit your vimrc
+      and add:\r\n\r\n<pre>\r\nsyntax on\r\n</pre>\r\n\r\n* Next, tell Vim that \\*.ni
+      files are Inform7 files by editing filetype.vim. To edit that file, open Vim
+      and enter *:ed $VIMRUNTIME/filetype.vim*. Add these lines:\r\n\r\n<pre>\r\n\"
+      Inform7\r\nau BufNewFile,BufRead *.ni      setf inform7 \r\n</pre>\r\n\r\n*
+      Last, you can add the Vim syntax to the Syntax menu. Open Vim and enter *:ed
+      $VIMRUNTIME/makemenu.vim*. Add the line below just after the older \"Inform\"
+      entry. You need to source the file (ie. run it) to update the menus: *:source
+      $VIMRUNTIME/makemenu.vim*.\r\n\r\n<pre>\r\nSynMenu HIJK.Inform7:inform7\r\n</pre>\r\n\r\n\r\nUpdate,
+      version 2.0!\r\n--------------------\r\n\r\nI made some improvements to this
+      file in April 2011. And then I made improvements to those improvements (on April
+      18). I have added a command to automatically resync the code folding when the
+      user leaves insert mode. This seems to solve all the remaining code folding
+      problems.\r\n\r\nResyncing works well on my computer (and my very small projects)
+      but if you have a slower system or large projects you might experience speed
+      issues. If you do, disable the automatic sync by editing the file and removing
+      the \"au\" command near the end. You'll then occasionally have to resync manually."
+    - '2011-03-31 11:00:00'
+    - '2013-05-31 13:26:07'
+    - Interactive Fiction
+  - - '8'
+    - Welcome
+    - "Welcome!\r\n\r\nThis used to be lesismore.co.za - but I've joined those vain
+      ranks who have gone and registered their own name as a .com! Mainly because
+      I couldn't be bothered complying with the latest weird requirements of the .co.za
+      registrars - the poor chaps really are still <a href=\"http://co.za/coza_reg.txt\">living
+      in 1995</a>.\r\n\r\nThis website is mostly so I can archive some of the things
+      I learn, and so that others can learn from them too. Sometimes you find a little
+      something that the Internet doesn't know too well yet, or it may be scatterbrained
+      about something, having bits of information spread all over the landscape.\r\n\r\nThat's
+      when its a good idea to distill the useful stuff into a small, safe place like
+      over here.\r\n\r\nHopefully you'll find some clarity here (or more likely, Google
+      will find it for you).\r\n\r\nYes But I'd Like More Info\r\n--------------------------\r\n\r\nWell
+      go over to my <%= link_to_page(\"about page\", :title => \"About This Website\")
+      %> then."
+    - '2011-03-31 11:00:00'
+    - '2013-11-28 18:28:30.356456'
+    - Meta
+  - - '9'
+    - Putting a Rails test database on Ramdisk
+    - "Want to run your Rails tests in a super fast Ramdisk?\r\n\r\nIngredients\r\n-----------\r\n\r\n1.
+      Postgres (8.0 or later)\r\n2. Ubuntu (12.04 is what I tested but will likely
+      work on just about any version)\r\n\r\nMethod\r\n------\r\n\r\nMy test database
+      is only about 30MB when seeded, so I can get away with a 200MB Ramdisk. Here's
+      a quick bash script to create a 200MB Ramdisk and a tablespace on that disk:\r\n\r\n<%
+      coderay(:lang => \"ruby\", :tab_width => 2) do -%>\r\necho \"Creating ramdb,
+      make sure your test db has 'tablespace test'\"\r\necho \"in database.yml\"\r\nsudo
+      mkdir -p /mnt/ram/pgtest\r\nsudo mount -t ramfs -o size=200m ramfs /mnt/ram/pgtest\r\nsudo
+      chown postgres:postgres /mnt/ram/pgtest\r\n\r\npsql postgres -c \\\r\n\"create
+      tablespace fastspace location '/mnt/ram/pgtest'\"\r\n<% end -%>\r\n\r\nOnce
+      you have done that, edit your database.yml and get it to be created in the new
+      tablespace:\r\n\r\n<% coderay(:lang => \"ruby\", :tab_width => 2) do -%>\r\ntest:\r\n
+      \ adapter: postgresql\r\n  database: mydatabase_test\r\n  ...\r\n  tablespace:
+      fastspace\r\n<% end -%>\r\n\r\n\r\nA bash script to drop everything again:\r\n\r\n<%
+      coderay(:lang => \"ruby\", :tab_width => 2) do -%>\r\npsql postgres -c \"drop
+      database mydatabase_test\"\r\npsql postgres -c \"drop tablespace fastspace\"\r\nsudo
+      rm -rf /mnt/ram/pgtest\r\nsudo umount /mnt/ram\r\n<% end -%>\r\n\r\nMy \"benchmarks\"\r\n---------------\r\n\r\nDisk\r\n\r\n<%
+      coderay(:lang => \"bash\", :tab_width => 2) do -%>\r\n1.\r\nreal  3m43.338s\r\nuser
+      \ 2m35.018s\r\nsys 0m25.614s\r\n\r\n2.\r\nreal  3m42.426s\r\nuser  2m34.654s\r\nsys
+      0m26.246s\r\n\r\n3.\r\nreal  3m45.447s\r\nuser  2m38.186s\r\nsys 0m26.182s\r\n<%
+      end -%>\r\n\r\nRamdisk\r\n\r\n<% coderay(:lang => \"bash\", :tab_width => 2)
+      do -%>\r\n1.\r\nreal  3m25.656s\r\nuser  2m38.334s\r\nsys 0m25.746s\r\n\r\n2.\r\nreal
+      \ 3m23.970s\r\nuser  2m36.798s\r\nsys 0m25.682s\r\n\r\n3.\r\nreal  3m24.451s\r\nuser
+      \ 2m37.226s\r\nsys 0m25.702s\r\n<% end -%>"
+    - '2012-07-31 12:00:00'
+    - '2013-05-31 13:20:01'
+    - Ruby
+  - - '10'
+    - About This Website
+    - "This is the website of Leslie Viljoen. I am a Disciple, Husband, Dad, Programmer,
+      Gamer, Geek, Gardener. Perhaps even in that order. I live in Auckland and work
+      at <%= link_to \"Localist\", \"http://www.localist.co.nz\", :target => \"_blank\"
+      %>, doing mostly Ruby on Rails and a little Devops on the side.\r\n\r\nComments
+      are welcome!\r\n\r\n*Contact* me AT *gmail*, using the address *leslieviljoen*.\r\n\r\nI
+      usually post more current info about what's happening with me on my [LiveJournal
+      page](http://lesliev.livejournal.com). Sadly I am also on Facebook. I know,
+      Facebook is not for contrarians, but Facebook helps me keep tabs on what my
+      far flung friends and family are up to, so I go on now and then. I'm also on
+      Twitter: @leslieviljoen.\r\n\r\nThis Website\r\n============\r\n\r\nI've had
+      some sort of website going for ages now.\r\n\r\nFirst I had a [Flash website](/downloads/home4.swf),
+      which was never completely finished before the \r\nsource was lost, so now I
+      can't finish it. Take a look, its quite pretty but hasn't changed since 2005.
+      I had some great Genetic Algorithm stuff in there and I called it my \"Home\"
+      page because I modeled the pages after the rooms in my house.\r\n\r\nLater I
+      started a [MoinMoin](http://moinmo.in) wiki. Then I moved it to [Instiki](http://www.instiki.org),
+      \r\nthen to [Junebug](http://junebug.rubyforge.org/). Many of these sites ran
+      at home on my Mac Mini, but \r\nafter the power failures in South Africa \r\n[because
+      government forgot to build new power stations](http://www.nytimes.com/2008/01/31/world/africa/31safrica.html?_r=1&oref=slogin),
+      \r\nI decided I'd have to move servers. And while moving, I might as well move
+      to a platform better \r\nsuited to what I was doing: a blog engine. \r\n\r\nI
+      signed up at [Blogger](https://www.blogger.com), because that was the easiest,
+      but I soon realised \r\nthat their nifty HTML editing website widget was a hindrance
+      to moving my articles across. The HTML \r\nmode helped but I still ended up
+      spending way too long formatting by hand. And the only option \r\nfor code syntax
+      highlighting seemed to be highlighting it with [Maruku](http://maruku.rubyforge.org/)
+      and pasting the resulting HTML\r\ninto the blog, which was really painful. \r\n\r\nSo
+      I tried [Wordpress](http://wordpress.com/) which was just as bad, and \r\n[BlogSpirit](http://www.blogspirit.com/).
+      Then I tried [Hobix](http://hobix.com/) but it seemed to have died.\r\nAnd then
+      [Webby](http://webby.rubyforge.org/). Which served me well for many years and
+      then finally in 2013 I found it unmaintained and broken. Rather than fix it
+      I decided to hack something together in Rails.\r\n\r\nAnd look, I have [Markdown!](http://daringfireball.net/projects/markdown/)
+      And syntax highlighting! \r\n\r\n<% coderay(:lang => \"ruby\", :tab_width =>
+      2) do -%>\r\nclass Array\r\n\t# return this array with elements shuffled\r\n\t#
+      \r\n\tdef shuffle\r\n\t\tsource = self.clone\r\n\t\tout = []\r\n\t\twhile !source.empty?\r\n\t\t\tout
+      << source.delete_at(rand*source.length)\r\n\t\tend\r\n\t\tout\r\n\tend\r\n\t#
+      drop random elements in the array to \r\n\t# produce a smaller (ordered) array
+      of size n\r\n\t#\r\n\tdef reduce(n)\r\n\t\tout = self.clone\r\n\t\twhile out.length>n\r\n\t\t\tout.delete_at(rand*out.length)\r\n\t\tend\r\n\t\tout\r\n\tend\r\nend\r\n<%
+      end -%>\r\n"
+    - '2011-03-31 11:00:00'
+    - '2013-06-01 01:18:54'
+    - Meta
+  - - '11'
+    - Instiki on OSX
+    - "If you install Instiki on Mac OSX using the all-in-one DMG file (instiki-0.10.2.dmg),
+      getting it to stay alive after you log out is quite hard. I had this same problem
+      with Linux - killing the console kills Instiki.\r\n\r\nHere's how I do it. \r\n\r\n1.
+      After double-clicking the DMG file, drag the Instiki.app to /Applications.\r\n1.
+      Edit /Applications/Instiki.app/Contents/Resources/rb_src/script/server, and
+      put your wiki on port 80 - look at line 11 (I assume you want this)\r\n1. As
+      root, make a starter script that looks like this:\r\n\r\n<% coderay(:lang =>
+      \"bash\") do -%>\r\n#!/bin/bash\r\nnohup /Applications/Instiki.app/Contents/MacOS/Instiki\\\r\n--storage
+      '/var/root/Library/Application Support/Instiki/80'\\\r\n> /var/log/instiki.`date
+      \"+%Y%m%d%H%M%S\"`.log &\r\n<% end -%>\r\n\r\n1. Run the script, and open http://localhost
+      in your browser\r\n1. Set up your wiki\r\n\r\n\r\nYou need to arrange that the
+      script starts every time you reboot. I'll put that up when I figure it out.\r\n\r\nLes"
+    - '2007-02-28 11:00:00'
+    - '2013-05-31 13:18:06'
+    - Darwin
+  - - '12'
+    - Hirb and IRBTools
+    - |-
+      The Rails console makes it pretty hard to see whats going on when you dump a model. IRBTools includes Hirb which will format Active Record output into pretty tables. Unfortunately those tables don't resize with the console resizing, but on unixy systems like Linux and OSX you can do a little hack to fix that.
+
+      This is my .irbrc file. Some save-history settings and the Signal.trap, which will tell Hirb to resize when the terminal resizes:
+
+      <% coderay(:lang => "bash", :tab_width => 2) do -%>
+      require 'irb/ext/save-history'
+      IRB.conf[:SAVE_HISTORY] = 200
+      IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
+
+      Signal.trap('SIGWINCH', proc { y, x = `stty size`.split.map(&:to_i); Hirb::View.resize(x, y) } )
+      <% end -%>
+
+      This requires these handy gems in your Gemfile:
+      <% coderay(:lang => "ruby", :tab_width => 2) do -%>
+      gem 'irbtools'
+      gem 'irbtools-more'
+      <% end -%>
+    - '2012-07-31 12:00:00'
+    - '2012-07-31 12:00:00'
+    - Ruby
+  - - '13'
+    - Secure Shell with Keys
+    - "Secure Shell, or SSH, is a way to log into a text terminal session over a network.
+      It's similar to the ancient Telnet system except that it supports strong encryption.
+      But thats not all - SSH goes way beyond just a terminal. Many other programs
+      can leverage its strong encryption, and it provides all kinds of advanced tunnelling
+      services too.\n\nThe basic advantage of using SSH over Telnet is that it won't
+      send your login and password in plain text over the network. So your credentials
+      can't be sniffed by someone who has access to the hardware between you and the
+      destination comptuer. In fact, SSH won't send your password over at all - it
+      will send the target machine a random number and ask it to encrypt that number
+      with your password. Then it will encypt that number itself and compare its results
+      with what the target machine sent back. In this way it can verify that the destination
+      knows your password.\n\nThe encryption is done using hashing algorithms. A hashing
+      algorithm is a bit of maths that converts one number into another in a way that's
+      pretty much impossible to reverse. \n\nYou can set up an SSH server on a remote
+      machine and then use a local SSH client to log into it. This is the basic and
+      most common way to use SSH. Note that instructions below work without changes
+      on Ubuntu 10.04 and probably many other versions and systems, but your mileage
+      may vary.\n\nBasic SSH Setup\n---------------\n\nOn the server machine:\n\n
+      \   sudo apt-get install openssh-server openssh-client\n\nThat's it! Now, just
+      to test, stay on the server machine and log in with SSH locally:\n\n    ssh
+      localhost -l [username]\n\nYou should be able to use your current username and
+      password and get a new terminal session. CTRL-D, or use 'exit' to exit.\n\nNow,
+      on the client machine: \n\n    sudo apt-get install openssh-client\n    ssh
+      [server ip] -l [username]\n\nDone! Now you should be able to get a secure terminal
+      session on a remote machine from anywhere with network access. Even over a public
+      network your password will not be sent in the clear, and this is an easy and
+      secure way to do things... as long as you have a good password. \n\nDictionary
+      Attacks\n------------------\n\nYou'll notice that if you have an SSH server
+      which can be accessed over the Internet (ie. port 22 is open to the outside
+      world), your logs will start filling up with people trying to log in using random
+      usernames. This is called a 'dictionary attack' - where people have programs
+      that just try random logins. If you have a common username and your password
+      is 'password' or '12345', you will likely have a visitor in the first three
+      weeks. There are many more local security exploits than remote ones, so once
+      someone gets access as a normal user, they are well on their way to fully owning
+      your computer.\n\nOn my own servers the majority of these scumbags have been
+      from other countries, so one technique is to use a firewall to restrict foreign
+      IP address blocks. But a much more automatic solution is to install fail2ban,
+      which will block people who fail the login process too many times.\n\nAnother
+      solution is to not use passwords at all...\n\nUsing Keys\n----------\n\nSSH
+      can use public keys instead of, or in addition to, passwords. A key is like
+      a very long random password, saved in a file, optionally encrypted itself. It
+      goes without saying that a dictionary attack is not going to guess your key.
+      Also, if your harddrive is relatively secure, you can have a passwordless login
+      to all your servers by loading your key into memory. There's a caveat though:
+      unlike passwords, keys come in pairs.\n\nUsing keys to log in is called 'public
+      key authentication'. When you make yourself a key, a pair gets generated - a
+      *public key* and a *private key*. The private one is yours and you should protect
+      it, particularly if its not encrypted with a password. Nobody should have a
+      copy of your private key except you. The *public* one can be known by anyone,
+      and is used to encrypt data that can only be decrypted by you, using your *private*
+      key. The *public* key needs to go on all the servers you want to access.\n\nIf
+      you already have password-based SSH access, you can use that access to copy
+      your public key to the server.\n\nPublic Key Steps\n----------------\n\nFirst
+      you need to create a key pair for yourself:\n\n    ssh-keygen -f [filename]\n\nEnter
+      a password, unless you are satisfied that nobody else will get a copy of your
+      key. In that case, the private key IS your password and has to be protected.
+      If someone breaks into your system and gets hold of your key without a password,
+      they will probably have access to many more systems.\n\nNow put the public key
+      on the remote server, using your password access:\n\n    scp [filename].pub
+      [server ip]:/home/[username]\n\nLog in and move the key file to the right place.
+      If .ssh already exists, be careful not to overwrite an existing authorized_keys
+      file.\n\n    ssh [server ip]\n    cd ~\n    mkdir .ssh\n    mv [filename].pub
+      .ssh/authorized_keys    # file exists?\n    chmod 600 .ssh/authorized_keys            #
+      file must not be public\n    exit\n\nThe *authorized_keys* file is the default,
+      it can be changed in the server's /etc/ssh/sshd_config. You can add other public
+      keys to this file and everyone with a corresponding private key will be able
+      to log in to the server with your login name. Also, you can automate these steps
+      to copy your local key to a remote authorized_keys file with a script that comes
+      with SSH called *ssh-copy-id*. To duplicate the steps above:\n\n    ssh-copy-id
+      -i [filename].pub [username]@[server_ip]\n\nNow, back on the client machine
+      you should be able to log in with your private key:\n\n    ssh [server ip] -i
+      [filename]\n\nYou should be asked for your key password. If you are asked for
+      your user password, there's something wrong. In that case log in to the server
+      with your user password again and monitor the log file:\n\n    ssh [server ip]\n
+      \   sudo tail -f /var/log/auth.log    # default log specified in /etc/ssh/sshd_config\n\nThen
+      open a *second* terminal on the *local client machine* and try again to log
+      in with the key, this time turning on some verbose info:\n\n    ssh [server
+      ip] -i filename -v\n\nWatch both terminals as you log in again with the key
+      and you should get messages explaining the problem. My most common errors have
+      been permissions problems. Both the authorized keys file and the private key
+      on the client side must not be world readable, so if you have problems the first
+      thing to do is:\n\n    chmod 600 [filename]                   # client\n    chmod
+      600 ~/.ssh/authorized_keys       # server\n\nTurning Off Password Access\n---------------------------\n\nOnce
+      your key access works, you may want to turn off password access on your server
+      so that you are no longer vulnerable to dictionary attacks, no matter what your
+      username and password are. To do this, log into the server and edit the /etc/ssh/sshd_config
+      file:\n\n    ssh [server ip] -i [filename]\n    sudo vi /etc/ssh/sshd_config\n\nIn
+      the file, set these to 'no':\n\n    ChallengeResponseAuthentication no\n    PasswordAuthentication
+      no\n\nPublic key authentication needs to be on, but it probably is already:\n
+      \ \n    PubkeyAuthentication yes\n\nThen save and exit, and reload the SSH server:\n\n
+      \   sudo /etc/init.d/ssh reload\n\nNow, when you try to login without specifying
+      your key, the login will fail:\n\n    $ ssh [server ip]\n    Permission denied
+      (publickey).\n\nThe (publickey) means that the last authentication method that
+      was tried and failed was public key. If you get this error unexpectedly and
+      need an explanation, use the trick above where you tail the auth.log file on
+      the server and use -v with the client.\n\nMemorizing the Private Key\n--------------------------\n\nUbuntu
+      nowadays automatically runs ssh-agent if you have it installed, so you can use
+      ssh-add to get it to remember your key:\n\n    ssh-add [filename]\n\nWith that
+      done, you will be able to put in your key password once and thereafter ssh-agent
+      will provide your key to any ssh session that needs it. If your key has no password,
+      you then have secure, no-password access to all the servers which have your
+      public key in authorized_keys. But since you only have to enter your key password
+      once, its a good idea to make use of the extra security provided by a key password.\n\nIf
+      the ssh-add command failed, ssh-agent may not be in memory. You'll get an error
+      like this:\n\n    Could not open a connection to your authentication agent.\n\nI
+      have seen some environments which do not load it automatically for you. In that
+      case, you can start an ssh-agent terminal session manually:\n\n    ssh-agent
+      bash\n\nThen your new bash session will have ssh-agent loaded and you can use
+      ssh-add.\n\n\nLast Words\n----------\n\nI hope this article was as simple as
+      possible but no simpler. Please find my contact details on the main page and
+      let me know of any errors, or if anything is unclear. "
+    - '2011-04-30 12:00:00'
+    - '2011-04-30 12:00:00'
+    - Ubuntu
+  - - '14'
+    - Reservoirs
+    - "The instructions with the pump indicate that the insulin reservoir should be
+      replaced when\r\nchanging the infusion set. I typically put in enough insulin
+      for around three days, but\r\nonly change it when it gets low. I do it like
+      this because I'd rather do two quick operations\r\nthan one long one. It probably
+      doesn't matter as long as the insulin doesn't last too long\r\nand become old.\r\n\r\nStandard
+      disclaimer\r\n-------------------\r\n\r\nPlease read the disclaimer on the <%=
+      link_to_page(\"introduction page.\", :title => \"Insulin Tips\") %>\r\n\r\nThe
+      procedure\r\n-------------\r\n\r\nWe dilute the insulin with saline, allowing
+      us to give 0.05 units at a time with our 0.1 unit\r\npump. This has worked really
+      well for us for over a year. I'll detail the procedure we follow\r\nbelow. Make
+      sure you follow the first step: **disconnect the pump from the set.**\r\n\r\n![Insulin
+      Reservoir](/assets/reservoir.jpg)\r\n\r\nWe start with a normal Minimed reservoir.
+      Remember that there are alternatives, see the \r\n<%= link_to_page(\"introduction
+      page.\", :title => \"Insulin Tips\") %>\r\n\r\n![Saline Vial](/assets/saline.jpg)\r\n\r\nI
+      dilute the insulin with the saline sold in pharmacies for cleaning contact lenses.
+      The smaller\r\nand cheaper the better, since I need a new vial every three days
+      and I have to discard any \r\nremaining saline. The best deal I have seen is
+      at a hospital pharmacy, where I got 2ml vials\r\nspecifically used for injecting.\r\n\r\n![Bending
+      the Reservoir](/assets/bendit.jpg)\r\n\r\nNext, I bend three of the plastic
+      flanges on top of the reservoir that act as guides for a syringe \r\nvial. This
+      is the hardest part: the pieces are quite strong and you have to be careful
+      not to \r\nimpale your fingers on the needle. Look at the picture to see the
+      result. \r\n\r\n![Reservoir at Zero](/assets/reservoir-zero.jpg)\r\n\r\nNow
+      I rotate the plunger a little to spread the lubricant inside the reservoir,
+      and empty it\r\ncompletely. Note that when empty, the top measuring line sits
+      in the middle of the top rubber \r\nring. To measure correctly we need to move
+      the top rubber ring a certain number of gaps between\r\nmeasuring lines.\r\n\r\n![Insulin
+      Vial on Needle](/assets/insulin-vial.jpg)\r\n\r\nNext I put the insulin vial
+      on the needle. You can see I am using a penfill since we had\r\ninsulin pens
+      at the beginning and always used the same prescription. A proper injection\r\nvial
+      will work just as well, the important thing is to draw up the insulin before
+      the saline\r\nso there's no chance of getting saline into the insulin vial.\r\n\r\n![Insulin
+      in Reservoir](/assets/insulin-done.jpg)\r\n\r\nHere you can see the insulin
+      is done. Jenna needs about 60 units of undiluted insulin for\r\nthree days.
+      That means we have to move the top rubber ring over three gaps of 20 units \r\neach,
+      letting it come to rest with the line in the middle of the ring. You can also
+      see\r\na tiny bubble under my finger - that one is too small to worry about.\r\n\r\n![Saline
+      on Needle](/assets/draw-saline.jpg)\r\n\r\nNow we open the top of the saline
+      vial (for air) and force the needle through the bottom, preferably\r\nwhere
+      the plastic is thin. Sometimes the plastic from the vial gets lodged in the
+      needle,\r\nand in this case it will become almost impossible to draw any saline.
+      I normally start over\r\nwith another reservoir when this happens because it
+      doesn't happen very often.\r\n\r\n![Saline done](/assets/saline-done.jpg)\r\n\r\nHere
+      you can see the saline is done. I have moved the top rubber ring of the plunger
+      over\r\nanother three measurement gaps, since we are diluting 50/50. Now there
+      are 120 units of\r\ndiluted insulin in the reservoir. I usually roll the reservoir
+      a bit to mix the insulin well.\r\n\r\n![Pump with Reservoir](/assets/done.jpg)\r\n\r\nAnd
+      there you have it. Connect the tube and prime out any air, making sure that
+      the pump \r\nis disconnected first of course."
+    - '2008-01-31 11:00:00'
+    - '2013-05-31 12:51:06'
+    - Diabetes
+  - - '15'
+    - Squid 3 Transparent Proxy
+    - "Squid works for me! It's just that it can be really hard to configure seeing
+      as it has SAMBA syndrome - ie. you can configure \nit to be a proxy server,
+      or a burnt toast shooter, or a small green apricot if you like.\n\nBoth SAMBA
+      and Squid require all sorts of advanced knowledge of the thing you are trying
+      to get them to do, and Squid comes \nwith defaults that make it pretty useless
+      (to me).\n\nAnyway, I only ever use Squid as a transparent proxy at my Internet
+      gateway in order to provide a network-wide Internet cache. \nPrior to Squid
+      3, this required a hand-full of mysterious options, and a firewall rule to redirect
+      outgoing traffic through Squid.\n\nThat was fine, with pages [like this](http://tldp.org/HOWTO/TransparentProxy-4.html)
+      helping.\n\nIn Squid 3, things have been simplified, but no-one seems to have
+      thought it necessary to update anyone on the new procedure. \nAn important ACL
+      rule you need is:\n\n\talways_direct allow all\n\nAfter MUCH PAIN, here is the
+      full solution:\n\n    http_port 3128 transparent\n    hierarchy_stoplist cgi-bin
+      ?\n    acl QUERY urlpath_regex cgi-bin \\?\n    cache deny QUERY\n    acl apache
+      rep_header Server ^Apache\n    access_log /var/log/squid/access.log squid\n
+      \   hosts_file /etc/hosts\n    refresh_pattern ^ftp: 1440 20% 10080\n    refresh_pattern
+      ^gopher: 1440 0% 1440\n    refresh_pattern . 0 20% 4320\n    acl all src 0.0.0.0/0.0.0.0\n
+      \   acl manager proto cache_object\n    acl localhost src 127.0.0.1/255.255.255.255\n
+      \   acl to_localhost dst 127.0.0.0/8\n    acl SSL_ports port 443 563 # https,
+      snews\n    acl SSL_ports port 873 # rsync\n    acl Safe_ports port 80 # http\n
+      \   acl Safe_ports port 21 # ftp\n    acl Safe_ports port 443 563 # https, snews\n
+      \   acl Safe_ports port 70 # gopher\n    acl Safe_ports port 210 # wais\n    acl
+      Safe_ports port 1025-65535 # unregistered ports\n    acl Safe_ports port 280
+      # http-mgmt\n    acl Safe_ports port 488 # gss-http\n    acl Safe_ports port
+      591 # filemaker\n    acl Safe_ports port 777 # multiling http\n    acl Safe_ports
+      port 631 # cups\n    acl Safe_ports port 873 # rsync\n    acl Safe_ports port
+      901 # SWAT\n    acl purge method PURGE\n    acl CONNECT method CONNECT\n    http_access
+      allow manager localhost\n    http_access deny manager\n    http_access allow
+      purge localhost\n    http_access deny purge\n    http_access deny !Safe_ports\n
+      \   http_access deny CONNECT !SSL_ports\n    http_access allow localhost\n    acl
+      lan src 10.0.0.0/8\n    http_access allow localhost\n    http_access allow lan\n
+      \   http_access deny all\n    http_reply_access allow all\n    icp_access allow
+      all\n    visible_hostname lesismore.co.za\n    always_direct allow all\n    coredump_dir
+      /var/spool/squid\n\nThis listing was generated using grep to remove comments
+      from the config file:\n\n    grep -v \"^#\" /etc/squid/squid.conf | sed -e '/^$/d'\n\nYou
+      need to put the rule in Iptables as before, to redirect outgoing port 80 requests
+      through Squid:\n\n    iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80
+      -j REDIRECT --to-port 3128\n\nThings you will have to change from the above\n\n
+      \  1. squid.conf: *acl lan src 10.0.0.0/8* - you need to specify the IP ranges
+      of your internal network\n   2. squid.conf: *visible_hostname lesismore.co.za*
+      - you need to put your cache hostname here!\n   3. The firewall rule says *eth0*,
+      assuming your internal lan facing network card is eth0. Change as needed.\n\n\nNote\n----\n\nI
+      thought the *always_direct* directive might turn off caching, but according
+      to the squid.conf comments:\n\n    # NOTE: This directive is not related to
+      caching. The replies\n    # is cached as usual even if you use always_direct.
+      To not cache\n    # the replies see no_cache.\n\nPrior to turning on this option,
+      the error I got was:\n\n    ERROR\n    The requested URL could not be retrieved\n\n
+      \   While trying to retrieve the URL: http://www.toyota.co.za/\n\n    The following
+      error was encountered:\n\n    * Unable to forward this request at this time.\n\n
+      \   This request could not be forwarded to the origin server or to any parent
+      caches. \n\t\tThe most likely cause for this error is that:\n\n    * The cache
+      administrator does not allow this cache to make direct connections \n\t\tto
+      origin servers, and\n    * All configured parent caches are currently unreachable.\n\nErrata\n------\n\nThanks
+      to Mat Stace for pointing out that the line \"broken\\_vary\\_encoding allow
+      apache\" is not valid as a Squid 3 directive.\n\nComments\n--------\n\n*anon*\n\n\tThanks
+      for this article - it's great. Even better, I am running Squid 2.6STABLE16 \n\ton
+      Fedora 7 and this worked perfectly whereas the Squid 2.6 tutorials did not.
+      I \n\tonly changed the variables that you discussed above. My IP range is 192.168.1.0/24,
+      \n\twhich I believe is pretty common for small LANs. I also run Firestarter
+      for a \n\tfirewall and it doesn't seem to overwrite my port redirects in iptables
+      \n\twhen I restart Firestarter.\n\n*boyindia, March 4, 2008*\n\n\tBut then your
+      proxy is not taking care of https traffic.\n\tHow would you use Squid 3 to handle
+      https traffic and the ip table rule to route \n\ttraffic to squid port 3128.\n\n*Gautam,
+      April 10, 2008*\n\n\thow do i configure squid to implement acl. I configured
+      as you said but any acl is \n\tnot working. Suppose i would like to block http://www.gmail.com.
+      pls help me. \n\tyou can send mail to me as (gautam2k8 At gmail)"
+    - '2008-04-30 12:00:00'
+    - '2008-04-30 12:00:00'
+    - Ubuntu
+  - - '16'
+    - My Minecraft server
+    - "I *sometimes* run a Minecraft server at *lesathome.dyndns.info*. Currently
+      it will only be online when I am playing :)\r\n\r\nThe server is in Auckland.
+      If that's close enough and you'd like to join, please email me and ask for permission
+      and I'll add you to the whitelist. We welcome anyone who's not going to cause
+      trouble for the rest of us.\r\n\r\nAt the moment its running Tekkit for Minecraft
+      1.2.5, so you'll need the latest [TechnicPack](http://www.technicpack.net) to
+      join. I am using Technic launcher 1.0.1.3.\r\n\r\n![Can haz nukuler poer?](/assets/reactor.jpg)\r\n\r\n![Starting
+      a cultivating terraformer](/assets/terra-start.jpg)\r\n\r\n![A forest planted
+      by the terraformer](/assets/terra-forest.jpg)\r\n\r\n![The forest converted
+      to a mushroom area](/assets/terra-mush.jpg)\r\n"
+    - '2012-07-31 12:00:00'
+    - '2013-05-31 12:07:09'
+    - Minecraft
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - leslieviljoen@gmail.com
+    - $2a$10$sNpEisgga72SM67W6QrUnuo7kn.SqA8nt78f6i.9r30z5t2KlIshu
+    - 
+    - 
+    - '2014-01-24 02:13:48.100945'
+    - '8'
+    - '2014-01-24 06:39:14.913328'
+    - '2014-01-24 02:13:48.131758'
+    - 127.0.0.1
+    - 127.0.0.1
+    - '2014-01-23 06:30:40.651353'
+    - '2014-01-24 06:39:14.915235'

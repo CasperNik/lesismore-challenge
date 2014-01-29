@@ -1,0 +1,111 @@
+
+body {
+  font-family: Verdana, "Bitstream Vera Sans", sans-serif;
+  color:      #b0a396;
+  background: url('/images/damwall-1920lr.jpg') no-repeat fixed center;
+  background-size: cover;
+}
+
+/* Headings
+ * --------------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6 { color: #7a80b4; }
+h1 { margin-bottom: 0.1em }
+
+/* Text Elements
+ * --------------------------------------------------------------------- */
+a                 { color: #c88801; }
+a:link            { color: #c88801; }
+a:visited         { color: #865d08; }
+a:hover           { color: #f3c86e; }
+a:active          { color: #de9500; }
+a:link:hover      { color: #f3c86e; }
+blockquote        { color: #666; }
+
+em,dfn {
+	font-style: normal;
+	background-color: transparent;
+	font-weight: bold;
+ }
+
+pre {
+  background: #1e1e27;
+  border:     1px solid #5f5f68;
+}
+
+hr {
+  background: #ddbe7c;
+  color:      #ddbe7c;
+}
+
+/* Tables
+ * --------------------------------------------------------------------- */
+table {
+  border-top:     1px solid #5f5f68;
+  border-left:    1px solid #5f5f68;
+}
+th,td {
+  border-bottom:  1px solid #5f5f68;
+  border-right:   1px solid #5f5f68;
+}
+
+/* Default Classes
+ * --------------------------------------------------------------------- */
+
+p.image img {
+	text-align: center;
+	border: 1px solid #7D6340;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+p.left-image img {
+	border: 1px solid #7D6340;
+	float: left;
+}
+
+p.right-image img {
+	border: 1px solid #7D6340;
+	float: right;
+}
+
+p.quiet { color: #666; }
+.alt    { color: #666; }
+
+p.title {
+  color: #111;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  margin-bottom: 0.75em;
+}
+
+#header p.title {
+	font-size: 3em;
+	line-height: 1;
+	margin-bottom: 0.5em;
+  color:      #ddbe7c;
+}
+
+p.year {
+	color: #666;
+	margin-bottom:2px;
+}
+
+p.month {
+	color: #666;
+	margin-bottom:2px;
+	margin-left: 1em;
+}
+
+div.entrylist li{
+	list-style: square outside;
+	margin-left: 2em;
+	margin-top: 2px;
+}
+
+span.dateline {
+	font-style: italic;
+}
+
+/* EOF */

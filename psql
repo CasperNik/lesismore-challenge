@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'ostruct'
+c = OpenStruct.new(YAML.load_file('config/database.yml')['development'])
+
+#<OpenStruct adapter="postgresql", database="localist_prod_dev", pool=5, timeout=5000, username="leslie", password=1234, template="template_postgis", host="localhost", port=5432>
+
+puts "password: #{c.password}"
+exec "psql -U #{c.username} #{c.database}"
+

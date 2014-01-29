@@ -1,0 +1,430 @@
+# Logfile created on 2014-01-29 20:10:40 +1300 by logger.rb/41954
+I, [2014-01-29T20:10:40.177455 #28499]  INFO -- : 0:  rake (10.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rake-10.1.1.gemspec
+I, [2014-01-29T20:10:40.177979 #28499]  INFO -- : 0:  i18n (0.6.9) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/i18n-0.6.9.gemspec
+I, [2014-01-29T20:10:41.763987 #28499]  INFO -- : 0:  minitest (4.7.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/minitest-4.7.5.gemspec
+I, [2014-01-29T20:10:41.765263 #28499]  INFO -- : 0:  multi_json (1.8.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/multi_json-1.8.4.gemspec
+I, [2014-01-29T20:10:43.565009 #28499]  INFO -- : 0:  atomic (1.1.14) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/atomic-1.1.14.gemspec
+I, [2014-01-29T20:10:45.878511 #28499]  INFO -- : 0:  thread_safe (0.1.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thread_safe-0.1.3.gemspec
+I, [2014-01-29T20:10:45.879895 #28499]  INFO -- : 0:  tzinfo (0.3.38) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/tzinfo-0.3.38.gemspec
+I, [2014-01-29T20:10:49.222820 #28499]  INFO -- : 0:  activesupport (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activesupport-4.0.1.gemspec
+I, [2014-01-29T20:10:50.768649 #28499]  INFO -- : 0:  builder (3.1.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/builder-3.1.4.gemspec
+I, [2014-01-29T20:10:50.769954 #28499]  INFO -- : 0:  erubis (2.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/erubis-2.7.0.gemspec
+I, [2014-01-29T20:10:50.770959 #28499]  INFO -- : 0:  rack (1.5.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-1.5.2.gemspec
+I, [2014-01-29T20:10:50.771877 #28499]  INFO -- : 0:  rack-test (0.6.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-01-29T20:10:54.067648 #28499]  INFO -- : 0:  actionpack (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionpack-4.0.1.gemspec
+I, [2014-01-29T20:10:54.068929 #28499]  INFO -- : 0:  mime-types (1.25.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-01-29T20:10:54.069997 #28499]  INFO -- : 0:  polyglot (0.3.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/polyglot-0.3.3.gemspec
+I, [2014-01-29T20:10:54.070966 #28499]  INFO -- : 0:  treetop (1.4.15) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/treetop-1.4.15.gemspec
+I, [2014-01-29T20:10:54.071881 #28499]  INFO -- : 0:  mail (2.5.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mail-2.5.4.gemspec
+I, [2014-01-29T20:10:55.370688 #28499]  INFO -- : 0:  actionmailer (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionmailer-4.0.1.gemspec
+I, [2014-01-29T20:10:56.698353 #28499]  INFO -- : 0:  activemodel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activemodel-4.0.1.gemspec
+I, [2014-01-29T20:10:59.094200 #28499]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2014-01-29T20:11:00.642172 #28499]  INFO -- : 0:  arel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/arel-4.0.1.gemspec
+I, [2014-01-29T20:11:04.453523 #28499]  INFO -- : 0:  activerecord (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-4.0.1.gemspec
+I, [2014-01-29T20:11:05.851117 #28499]  INFO -- : 0:  alias (0.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/alias-0.2.3.gemspec
+I, [2014-01-29T20:11:07.373459 #28499]  INFO -- : 0:  awesome_print (1.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/awesome_print-1.2.0.gemspec
+I, [2014-01-29T20:11:07.374578 #28499]  INFO -- : 0:  bcrypt-ruby (3.1.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bcrypt-ruby-3.1.2.gemspec
+I, [2014-01-29T20:11:08.659220 #28499]  INFO -- : 0:  blankslate (2.1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/blankslate-2.1.2.4.gemspec
+I, [2014-01-29T20:11:15.092011 #28499]  INFO -- : 0:  parslet (1.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/parslet-1.5.0.gemspec
+I, [2014-01-29T20:11:16.428093 #28499]  INFO -- : 0:  toml (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/toml-0.0.4.gemspec
+I, [2014-01-29T20:11:17.580327 #28499]  INFO -- : 0:  binding.repl (0.9.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/binding.repl-0.9.0.gemspec
+I, [2014-01-29T20:11:23.830868 #28499]  INFO -- : 0:  bluecloth (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bluecloth-2.2.0.gemspec
+I, [2014-01-29T20:11:26.954576 #28499]  INFO -- : 0:  boson (1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-1.2.4.gemspec
+I, [2014-01-29T20:11:28.671131 #28499]  INFO -- : 0:  boson-more (0.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-more-0.2.2.gemspec
+I, [2014-01-29T20:11:28.672390 #28499]  INFO -- : 0:  bundler (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
+I, [2014-01-29T20:11:29.856824 #28499]  INFO -- : 0:  clipboard (1.0.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/clipboard-1.0.5.gemspec
+I, [2014-01-29T20:11:29.857812 #28499]  INFO -- : 0:  coderay (1.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coderay-1.1.0.gemspec
+I, [2014-01-29T20:11:31.569624 #28499]  INFO -- : 0:  coffee-script-source (1.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-01-29T20:11:31.570468 #28499]  INFO -- : 0:  execjs (2.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/execjs-2.0.2.gemspec
+I, [2014-01-29T20:11:31.570885 #28499]  INFO -- : 0:  coffee-script (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-01-29T20:11:31.571181 #28499]  INFO -- : 0:  thor (0.18.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thor-0.18.1.gemspec
+I, [2014-01-29T20:11:34.435075 #28499]  INFO -- : 0:  railties (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/railties-4.0.1.gemspec
+I, [2014-01-29T20:11:35.894893 #28499]  INFO -- : 0:  coffee-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-rails-4.0.1.gemspec
+I, [2014-01-29T20:11:35.896131 #28499]  INFO -- : 0:  orm_adapter (0.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/orm_adapter-0.5.0.gemspec
+I, [2014-01-29T20:11:35.897116 #28499]  INFO -- : 0:  warden (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/warden-1.2.3.gemspec
+I, [2014-01-29T20:11:38.170867 #28499]  INFO -- : 0:  devise (3.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/devise-3.2.2.gemspec
+I, [2014-01-29T20:11:39.404686 #28499]  INFO -- : 0:  every_day_irb (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/every_day_irb-1.5.1.gemspec
+I, [2014-01-29T20:11:40.720530 #28499]  INFO -- : 0:  paint (0.8.7) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/paint-0.8.7.gemspec
+I, [2014-01-29T20:11:44.751063 #28499]  INFO -- : 0:  unicode-display_width (0.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/unicode-display_width-0.1.1.gemspec
+I, [2014-01-29T20:11:47.563154 #28499]  INFO -- : 0:  fancy_irb (0.7.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/fancy_irb-0.7.3.gemspec
+I, [2014-01-29T20:11:47.564394 #28499]  INFO -- : 0:  ffi (1.9.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ffi-1.9.3.gemspec
+I, [2014-01-29T20:11:50.061554 #28499]  INFO -- : 0:  g (1.7.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/g-1.7.2.gemspec
+I, [2014-01-29T20:11:50.062677 #28499]  INFO -- : 0:  hike (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hike-1.2.3.gemspec
+I, [2014-01-29T20:11:52.006256 #28499]  INFO -- : 0:  hirb (0.7.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hirb-0.7.1.gemspec
+I, [2014-01-29T20:11:53.572234 #28499]  INFO -- : 0:  spoon (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/spoon-0.0.4.gemspec
+I, [2014-01-29T20:12:00.023451 #28499]  INFO -- : 0:  interactive_editor (0.0.10) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/interactive_editor-0.0.10.gemspec
+I, [2014-01-29T20:12:01.981634 #28499]  INFO -- : 0:  method_locator (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_locator-0.0.4.gemspec
+I, [2014-01-29T20:12:03.435226 #28499]  INFO -- : 0:  method_source (0.8.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_source-0.8.2.gemspec
+I, [2014-01-29T20:12:09.572812 #28499]  INFO -- : 0:  methodfinder (2.0.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/methodfinder-2.0.0.gemspec
+I, [2014-01-29T20:12:11.393997 #28499]  INFO -- : 0:  ori (0.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ori-0.1.0.gemspec
+I, [2014-01-29T20:12:12.540383 #28499]  INFO -- : 0:  wirb (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/wirb-1.0.3.gemspec
+I, [2014-01-29T20:12:19.365281 #28499]  INFO -- : 0:  zucker (13.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/zucker-13.1.gemspec
+I, [2014-01-29T20:12:20.671291 #28499]  INFO -- : 0:  irbtools (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/irbtools-1.5.1.gemspec
+I, [2014-01-29T20:12:22.291062 #28499]  INFO -- : 0:  jbuilder (1.5.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jbuilder-1.5.3.gemspec
+I, [2014-01-29T20:12:24.328928 #28499]  INFO -- : 0:  jquery-rails (3.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-01-29T20:12:24.330245 #28499]  INFO -- : 0:  json (1.8.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/json-1.8.1.gemspec
+E, [2014-01-29T20:12:30.935087 #28499] ERROR -- : Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    /home/nik/.rvm/rubies/ruby-2.0.0-p353/bin/ruby extconf.rb 
+checking for pg_config... yes
+Using config values from /usr/bin/pg_config
+You need to install postgresql-server-dev-X.Y for building a server-side extension or libpq-dev for building a client-side application.
+You need to install postgresql-server-dev-X.Y for building a server-side extension or libpq-dev for building a client-side application.
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/home/nik/.rvm/rubies/ruby-2.0.0-p353/bin/ruby
+	--with-pg
+	--without-pg
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /home/nik/.rvm/gems/ruby-2.1.0/gems/pg-0.17.1 for inspection.
+Results logged to /home/nik/.rvm/gems/ruby-2.1.0/extensions/x86_64-linux/2.0.0/pg-0.17.1/gem_make.out
+
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:89:in `run'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:37:in `block in build'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/tempfile.rb:324:in `open'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/ext_conf_builder.rb:17:in `build'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:161:in `block (2 levels) in build_extension'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:160:in `chdir'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:160:in `block in build_extension'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:159:in `synchronize'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:159:in `build_extension'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:198:in `block in build_extensions'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:195:in `each'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/ext/builder.rb:195:in `build_extensions'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/installer.rb:677:in `build_extensions'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/site_ruby/2.0.0/rubygems/installer.rb:232:in `install'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:101:in `block in install'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:118:in `preserve_paths'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/source/rubygems.rb:94:in `install'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/installer.rb:111:in `block in install_gem_from_spec'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/rubygems_integration.rb:150:in `with_build_args'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/installer.rb:110:in `install_gem_from_spec'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/installer.rb:295:in `block in install_sequentially'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/forwardable.rb:171:in `each'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/installer.rb:294:in `install_sequentially'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/installer.rb:97:in `run'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/installer.rb:15:in `install'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/cli.rb:336:in `update'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/vendor/thor/command.rb:27:in `run'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/vendor/thor/invocation.rb:120:in `invoke_command'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/vendor/thor.rb:363:in `dispatch'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/vendor/thor/base.rb:438:in `start'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/cli.rb:10:in `start'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/bin/bundle:22:in `block in <top (required)>'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/lib/bundler/friendly_errors.rb:5:in `with_friendly_errors'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/gems/bundler-1.5.1/bin/bundle:22:in `<top (required)>'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/bin/bundle:19:in `load'  \n/home/nik/.rvm/gems/ruby-2.1.0@global/bin/bundle:19:in `<main>'
+I, [2014-01-29T20:43:29.474767 #2246]  INFO -- : 0:  rake (10.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rake-10.1.1.gemspec
+I, [2014-01-29T20:43:29.475392 #2246]  INFO -- : 0:  i18n (0.6.9) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/i18n-0.6.9.gemspec
+I, [2014-01-29T20:43:29.475738 #2246]  INFO -- : 0:  minitest (4.7.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/minitest-4.7.5.gemspec
+I, [2014-01-29T20:43:29.476072 #2246]  INFO -- : 0:  multi_json (1.8.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/multi_json-1.8.4.gemspec
+I, [2014-01-29T20:43:29.476418 #2246]  INFO -- : 0:  atomic (1.1.14) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/atomic-1.1.14.gemspec
+I, [2014-01-29T20:43:29.476719 #2246]  INFO -- : 0:  thread_safe (0.1.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thread_safe-0.1.3.gemspec
+I, [2014-01-29T20:43:29.477071 #2246]  INFO -- : 0:  tzinfo (0.3.38) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/tzinfo-0.3.38.gemspec
+I, [2014-01-29T20:43:29.477368 #2246]  INFO -- : 0:  activesupport (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activesupport-4.0.1.gemspec
+I, [2014-01-29T20:43:29.477650 #2246]  INFO -- : 0:  builder (3.1.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/builder-3.1.4.gemspec
+I, [2014-01-29T20:43:29.477932 #2246]  INFO -- : 0:  erubis (2.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/erubis-2.7.0.gemspec
+I, [2014-01-29T20:43:29.478247 #2246]  INFO -- : 0:  rack (1.5.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-1.5.2.gemspec
+I, [2014-01-29T20:43:29.478525 #2246]  INFO -- : 0:  rack-test (0.6.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-01-29T20:43:29.478802 #2246]  INFO -- : 0:  actionpack (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionpack-4.0.1.gemspec
+I, [2014-01-29T20:43:29.479073 #2246]  INFO -- : 0:  mime-types (1.25.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-01-29T20:43:29.479343 #2246]  INFO -- : 0:  polyglot (0.3.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/polyglot-0.3.3.gemspec
+I, [2014-01-29T20:43:29.479615 #2246]  INFO -- : 0:  treetop (1.4.15) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/treetop-1.4.15.gemspec
+I, [2014-01-29T20:43:29.479899 #2246]  INFO -- : 0:  mail (2.5.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mail-2.5.4.gemspec
+I, [2014-01-29T20:43:29.480818 #2246]  INFO -- : 0:  actionmailer (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionmailer-4.0.1.gemspec
+I, [2014-01-29T20:43:29.481487 #2246]  INFO -- : 0:  activemodel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activemodel-4.0.1.gemspec
+I, [2014-01-29T20:43:29.481840 #2246]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2014-01-29T20:43:29.482112 #2246]  INFO -- : 0:  arel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/arel-4.0.1.gemspec
+I, [2014-01-29T20:43:29.482390 #2246]  INFO -- : 0:  activerecord (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-4.0.1.gemspec
+I, [2014-01-29T20:43:29.482656 #2246]  INFO -- : 0:  alias (0.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/alias-0.2.3.gemspec
+I, [2014-01-29T20:43:29.482913 #2246]  INFO -- : 0:  awesome_print (1.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/awesome_print-1.2.0.gemspec
+I, [2014-01-29T20:43:29.483180 #2246]  INFO -- : 0:  bcrypt-ruby (3.1.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bcrypt-ruby-3.1.2.gemspec
+I, [2014-01-29T20:43:29.483468 #2246]  INFO -- : 0:  blankslate (2.1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/blankslate-2.1.2.4.gemspec
+I, [2014-01-29T20:43:29.483809 #2246]  INFO -- : 0:  parslet (1.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/parslet-1.5.0.gemspec
+I, [2014-01-29T20:43:29.484144 #2246]  INFO -- : 0:  toml (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/toml-0.0.4.gemspec
+I, [2014-01-29T20:43:29.484410 #2246]  INFO -- : 0:  binding.repl (0.9.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/binding.repl-0.9.0.gemspec
+I, [2014-01-29T20:43:29.484658 #2246]  INFO -- : 0:  bluecloth (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bluecloth-2.2.0.gemspec
+I, [2014-01-29T20:43:29.484899 #2246]  INFO -- : 0:  boson (1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-1.2.4.gemspec
+I, [2014-01-29T20:43:29.485141 #2246]  INFO -- : 0:  boson-more (0.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-more-0.2.2.gemspec
+I, [2014-01-29T20:43:29.485368 #2246]  INFO -- : 0:  bundler (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
+I, [2014-01-29T20:43:29.485862 #2246]  INFO -- : 0:  clipboard (1.0.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/clipboard-1.0.5.gemspec
+I, [2014-01-29T20:43:29.486450 #2246]  INFO -- : 0:  coderay (1.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coderay-1.1.0.gemspec
+I, [2014-01-29T20:43:29.486988 #2246]  INFO -- : 0:  coffee-script-source (1.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-01-29T20:43:29.487659 #2246]  INFO -- : 0:  execjs (2.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/execjs-2.0.2.gemspec
+I, [2014-01-29T20:43:29.488052 #2246]  INFO -- : 0:  coffee-script (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-01-29T20:43:29.488400 #2246]  INFO -- : 0:  thor (0.18.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thor-0.18.1.gemspec
+I, [2014-01-29T20:43:29.488673 #2246]  INFO -- : 0:  railties (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/railties-4.0.1.gemspec
+I, [2014-01-29T20:43:29.488920 #2246]  INFO -- : 0:  coffee-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-rails-4.0.1.gemspec
+I, [2014-01-29T20:43:29.489163 #2246]  INFO -- : 0:  orm_adapter (0.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/orm_adapter-0.5.0.gemspec
+I, [2014-01-29T20:43:29.489402 #2246]  INFO -- : 0:  warden (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/warden-1.2.3.gemspec
+I, [2014-01-29T20:43:29.489641 #2246]  INFO -- : 0:  devise (3.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/devise-3.2.2.gemspec
+I, [2014-01-29T20:43:29.489878 #2246]  INFO -- : 0:  every_day_irb (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/every_day_irb-1.5.1.gemspec
+I, [2014-01-29T20:43:29.490277 #2246]  INFO -- : 0:  paint (0.8.7) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/paint-0.8.7.gemspec
+I, [2014-01-29T20:43:29.490697 #2246]  INFO -- : 0:  unicode-display_width (0.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/unicode-display_width-0.1.1.gemspec
+I, [2014-01-29T20:43:29.491119 #2246]  INFO -- : 0:  fancy_irb (0.7.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/fancy_irb-0.7.3.gemspec
+I, [2014-01-29T20:43:29.491615 #2246]  INFO -- : 0:  ffi (1.9.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ffi-1.9.3.gemspec
+I, [2014-01-29T20:43:29.492014 #2246]  INFO -- : 0:  g (1.7.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/g-1.7.2.gemspec
+I, [2014-01-29T20:43:29.492309 #2246]  INFO -- : 0:  hike (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hike-1.2.3.gemspec
+I, [2014-01-29T20:43:29.492577 #2246]  INFO -- : 0:  hirb (0.7.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hirb-0.7.1.gemspec
+I, [2014-01-29T20:43:29.492841 #2246]  INFO -- : 0:  spoon (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/spoon-0.0.4.gemspec
+I, [2014-01-29T20:43:29.493098 #2246]  INFO -- : 0:  interactive_editor (0.0.10) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/interactive_editor-0.0.10.gemspec
+I, [2014-01-29T20:43:29.493341 #2246]  INFO -- : 0:  method_locator (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_locator-0.0.4.gemspec
+I, [2014-01-29T20:43:29.493580 #2246]  INFO -- : 0:  method_source (0.8.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_source-0.8.2.gemspec
+I, [2014-01-29T20:43:29.493835 #2246]  INFO -- : 0:  methodfinder (2.0.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/methodfinder-2.0.0.gemspec
+I, [2014-01-29T20:43:29.494082 #2246]  INFO -- : 0:  ori (0.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ori-0.1.0.gemspec
+I, [2014-01-29T20:43:29.494330 #2246]  INFO -- : 0:  wirb (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/wirb-1.0.3.gemspec
+I, [2014-01-29T20:43:29.494569 #2246]  INFO -- : 0:  zucker (13.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/zucker-13.1.gemspec
+I, [2014-01-29T20:43:29.494815 #2246]  INFO -- : 0:  irbtools (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/irbtools-1.5.1.gemspec
+I, [2014-01-29T20:43:29.495072 #2246]  INFO -- : 0:  jbuilder (1.5.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jbuilder-1.5.3.gemspec
+I, [2014-01-29T20:43:29.495329 #2246]  INFO -- : 0:  jquery-rails (3.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-01-29T20:43:29.495573 #2246]  INFO -- : 0:  json (1.8.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/json-1.8.1.gemspec
+I, [2014-01-29T20:43:29.495819 #2246]  INFO -- : 0:  pg (0.17.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/pg-0.17.1.gemspec
+I, [2014-01-29T20:43:29.496099 #2246]  INFO -- : 0:  tilt (1.4.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/tilt-1.4.1.gemspec
+I, [2014-01-29T20:43:29.496379 #2246]  INFO -- : 0:  sprockets (2.10.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sprockets-2.10.1.gemspec
+I, [2014-01-29T20:43:31.551720 #2246]  INFO -- : 0:  sprockets-rails (2.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sprockets-rails-2.0.1.gemspec
+I, [2014-01-29T20:43:45.428651 #2246]  INFO -- : 0:  rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails-4.0.1.gemspec
+I, [2014-01-29T20:43:46.662645 #2246]  INFO -- : 0:  rails_serve_static_assets (0.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_serve_static_assets-0.0.2.gemspec
+I, [2014-01-29T20:43:47.989563 #2246]  INFO -- : 0:  rails_stdout_logging (0.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_stdout_logging-0.0.3.gemspec
+I, [2014-01-29T20:43:54.081673 #2246]  INFO -- : 0:  rails_12factor (0.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_12factor-0.0.2.gemspec
+I, [2014-01-29T20:43:57.371923 #2246]  INFO -- : 0:  rdoc (4.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rdoc-4.1.1.gemspec
+I, [2014-01-29T20:43:57.372724 #2246]  INFO -- : 0:  sass (3.2.14) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sass-3.2.14.gemspec
+I, [2014-01-29T20:43:59.447723 #2246]  INFO -- : 0:  sass-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sass-rails-4.0.1.gemspec
+I, [2014-01-29T20:44:01.307440 #2246]  INFO -- : 0:  sdoc (0.4.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sdoc-0.4.0.gemspec
+I, [2014-01-29T20:44:02.836900 #2246]  INFO -- : 0:  sextant (0.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sextant-0.2.4.gemspec
+I, [2014-01-29T20:44:04.171205 #2246]  INFO -- : 0:  turbolinks (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/turbolinks-2.2.0.gemspec
+I, [2014-01-29T20:44:04.172525 #2246]  INFO -- : 0:  uglifier (2.4.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/uglifier-2.4.0.gemspec
+I, [2014-01-29T20:44:04.203297 #2246]  INFO -- : 0:  yaml_db (0.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/bundler/gems/yaml_db-82851a6b5171/yaml_db.gemspec
+I, [2014-01-29T21:20:33.518493 #3634]  INFO -- : 0:  rake (10.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rake-10.1.1.gemspec
+I, [2014-01-29T21:20:33.518920 #3634]  INFO -- : 0:  i18n (0.6.9) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/i18n-0.6.9.gemspec
+I, [2014-01-29T21:20:33.519214 #3634]  INFO -- : 0:  minitest (4.7.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/minitest-4.7.5.gemspec
+I, [2014-01-29T21:20:33.519519 #3634]  INFO -- : 0:  multi_json (1.8.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/multi_json-1.8.4.gemspec
+I, [2014-01-29T21:20:33.519806 #3634]  INFO -- : 0:  atomic (1.1.14) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/atomic-1.1.14.gemspec
+I, [2014-01-29T21:20:33.520096 #3634]  INFO -- : 0:  thread_safe (0.1.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thread_safe-0.1.3.gemspec
+I, [2014-01-29T21:20:33.520444 #3634]  INFO -- : 0:  tzinfo (0.3.38) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/tzinfo-0.3.38.gemspec
+I, [2014-01-29T21:20:33.520713 #3634]  INFO -- : 0:  activesupport (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activesupport-4.0.1.gemspec
+I, [2014-01-29T21:20:33.520987 #3634]  INFO -- : 0:  builder (3.1.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/builder-3.1.4.gemspec
+I, [2014-01-29T21:20:33.521262 #3634]  INFO -- : 0:  erubis (2.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/erubis-2.7.0.gemspec
+I, [2014-01-29T21:20:33.521528 #3634]  INFO -- : 0:  rack (1.5.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-1.5.2.gemspec
+I, [2014-01-29T21:20:33.521819 #3634]  INFO -- : 0:  rack-test (0.6.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-01-29T21:20:33.522117 #3634]  INFO -- : 0:  actionpack (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionpack-4.0.1.gemspec
+I, [2014-01-29T21:20:33.522406 #3634]  INFO -- : 0:  mime-types (1.25.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-01-29T21:20:33.522713 #3634]  INFO -- : 0:  polyglot (0.3.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/polyglot-0.3.3.gemspec
+I, [2014-01-29T21:20:33.522971 #3634]  INFO -- : 0:  treetop (1.4.15) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/treetop-1.4.15.gemspec
+I, [2014-01-29T21:20:33.523270 #3634]  INFO -- : 0:  mail (2.5.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mail-2.5.4.gemspec
+I, [2014-01-29T21:20:33.523546 #3634]  INFO -- : 0:  actionmailer (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionmailer-4.0.1.gemspec
+I, [2014-01-29T21:20:33.523842 #3634]  INFO -- : 0:  activemodel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activemodel-4.0.1.gemspec
+I, [2014-01-29T21:20:33.524137 #3634]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2014-01-29T21:20:33.524400 #3634]  INFO -- : 0:  arel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/arel-4.0.1.gemspec
+I, [2014-01-29T21:20:33.524662 #3634]  INFO -- : 0:  activerecord (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-4.0.1.gemspec
+I, [2014-01-29T21:20:33.524917 #3634]  INFO -- : 0:  alias (0.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/alias-0.2.3.gemspec
+I, [2014-01-29T21:20:33.525187 #3634]  INFO -- : 0:  awesome_print (1.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/awesome_print-1.2.0.gemspec
+I, [2014-01-29T21:20:33.525484 #3634]  INFO -- : 0:  bcrypt-ruby (3.1.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bcrypt-ruby-3.1.2.gemspec
+I, [2014-01-29T21:20:33.525782 #3634]  INFO -- : 0:  blankslate (2.1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/blankslate-2.1.2.4.gemspec
+I, [2014-01-29T21:20:33.526067 #3634]  INFO -- : 0:  parslet (1.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/parslet-1.5.0.gemspec
+I, [2014-01-29T21:20:33.526360 #3634]  INFO -- : 0:  toml (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/toml-0.0.4.gemspec
+I, [2014-01-29T21:20:33.526619 #3634]  INFO -- : 0:  binding.repl (0.9.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/binding.repl-0.9.0.gemspec
+I, [2014-01-29T21:20:33.526864 #3634]  INFO -- : 0:  bluecloth (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bluecloth-2.2.0.gemspec
+I, [2014-01-29T21:20:33.527107 #3634]  INFO -- : 0:  boson (1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-1.2.4.gemspec
+I, [2014-01-29T21:20:33.527362 #3634]  INFO -- : 0:  boson-more (0.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-more-0.2.2.gemspec
+I, [2014-01-29T21:20:33.527618 #3634]  INFO -- : 0:  clipboard (1.0.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/clipboard-1.0.5.gemspec
+I, [2014-01-29T21:20:33.528040 #3634]  INFO -- : 0:  coderay (1.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coderay-1.1.0.gemspec
+I, [2014-01-29T21:20:33.528511 #3634]  INFO -- : 0:  coffee-script-source (1.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-01-29T21:20:33.528936 #3634]  INFO -- : 0:  execjs (2.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/execjs-2.0.2.gemspec
+I, [2014-01-29T21:20:33.529371 #3634]  INFO -- : 0:  coffee-script (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-01-29T21:20:33.529778 #3634]  INFO -- : 0:  thor (0.18.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thor-0.18.1.gemspec
+I, [2014-01-29T21:20:33.530087 #3634]  INFO -- : 0:  railties (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/railties-4.0.1.gemspec
+I, [2014-01-29T21:20:33.530519 #3634]  INFO -- : 0:  coffee-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-rails-4.0.1.gemspec
+I, [2014-01-29T21:20:33.530987 #3634]  INFO -- : 0:  orm_adapter (0.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/orm_adapter-0.5.0.gemspec
+I, [2014-01-29T21:20:33.531309 #3634]  INFO -- : 0:  warden (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/warden-1.2.3.gemspec
+I, [2014-01-29T21:20:33.531661 #3634]  INFO -- : 0:  devise (3.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/devise-3.2.2.gemspec
+I, [2014-01-29T21:20:33.531962 #3634]  INFO -- : 0:  every_day_irb (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/every_day_irb-1.5.1.gemspec
+I, [2014-01-29T21:20:33.532359 #3634]  INFO -- : 0:  paint (0.8.7) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/paint-0.8.7.gemspec
+I, [2014-01-29T21:20:33.532755 #3634]  INFO -- : 0:  unicode-display_width (0.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/unicode-display_width-0.1.1.gemspec
+I, [2014-01-29T21:20:33.533155 #3634]  INFO -- : 0:  fancy_irb (0.7.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/fancy_irb-0.7.3.gemspec
+I, [2014-01-29T21:20:33.533769 #3634]  INFO -- : 0:  ffi (1.9.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ffi-1.9.3.gemspec
+I, [2014-01-29T21:20:33.534233 #3634]  INFO -- : 0:  g (1.7.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/g-1.7.2.gemspec
+I, [2014-01-29T21:20:33.534582 #3634]  INFO -- : 0:  hike (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hike-1.2.3.gemspec
+I, [2014-01-29T21:20:33.535010 #3634]  INFO -- : 0:  hirb (0.7.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hirb-0.7.1.gemspec
+I, [2014-01-29T21:20:33.535412 #3634]  INFO -- : 0:  spoon (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/spoon-0.0.4.gemspec
+I, [2014-01-29T21:20:33.535726 #3634]  INFO -- : 0:  interactive_editor (0.0.10) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/interactive_editor-0.0.10.gemspec
+I, [2014-01-29T21:20:33.536165 #3634]  INFO -- : 0:  method_locator (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_locator-0.0.4.gemspec
+I, [2014-01-29T21:20:33.536606 #3634]  INFO -- : 0:  method_source (0.8.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_source-0.8.2.gemspec
+I, [2014-01-29T21:20:33.536887 #3634]  INFO -- : 0:  methodfinder (2.0.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/methodfinder-2.0.0.gemspec
+I, [2014-01-29T21:20:33.537165 #3634]  INFO -- : 0:  ori (0.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ori-0.1.0.gemspec
+I, [2014-01-29T21:20:33.537483 #3634]  INFO -- : 0:  wirb (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/wirb-1.0.3.gemspec
+I, [2014-01-29T21:20:33.537909 #3634]  INFO -- : 0:  zucker (13.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/zucker-13.1.gemspec
+I, [2014-01-29T21:20:33.538328 #3634]  INFO -- : 0:  irbtools (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/irbtools-1.5.1.gemspec
+I, [2014-01-29T21:20:33.538749 #3634]  INFO -- : 0:  jbuilder (1.5.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jbuilder-1.5.3.gemspec
+I, [2014-01-29T21:20:33.539232 #3634]  INFO -- : 0:  jquery-rails (3.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-01-29T21:20:33.539671 #3634]  INFO -- : 0:  json (1.8.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/json-1.8.1.gemspec
+I, [2014-01-29T21:20:33.540020 #3634]  INFO -- : 0:  pg (0.17.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/pg-0.17.1.gemspec
+I, [2014-01-29T21:20:33.540447 #3634]  INFO -- : 0:  bundler (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
+I, [2014-01-29T21:20:33.540877 #3634]  INFO -- : 0:  tilt (1.4.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/tilt-1.4.1.gemspec
+I, [2014-01-29T21:20:33.541244 #3634]  INFO -- : 0:  sprockets (2.10.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sprockets-2.10.1.gemspec
+I, [2014-01-29T21:20:33.541571 #3634]  INFO -- : 0:  sprockets-rails (2.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sprockets-rails-2.0.1.gemspec
+I, [2014-01-29T21:20:33.541949 #3634]  INFO -- : 0:  rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails-4.0.1.gemspec
+I, [2014-01-29T21:20:33.542284 #3634]  INFO -- : 0:  rails_serve_static_assets (0.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_serve_static_assets-0.0.2.gemspec
+I, [2014-01-29T21:20:33.542784 #3634]  INFO -- : 0:  rails_stdout_logging (0.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_stdout_logging-0.0.3.gemspec
+I, [2014-01-29T21:20:33.543248 #3634]  INFO -- : 0:  rails_12factor (0.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_12factor-0.0.2.gemspec
+I, [2014-01-29T21:20:33.543691 #3634]  INFO -- : 0:  rdoc (4.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rdoc-4.1.1.gemspec
+I, [2014-01-29T21:20:33.544147 #3634]  INFO -- : 0:  sass (3.2.14) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sass-3.2.14.gemspec
+I, [2014-01-29T21:20:33.544577 #3634]  INFO -- : 0:  sass-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sass-rails-4.0.1.gemspec
+I, [2014-01-29T21:20:33.545000 #3634]  INFO -- : 0:  sdoc (0.4.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sdoc-0.4.0.gemspec
+I, [2014-01-29T21:20:33.545432 #3634]  INFO -- : 0:  sextant (0.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sextant-0.2.4.gemspec
+I, [2014-01-29T21:20:33.545719 #3634]  INFO -- : 0:  turbolinks (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/turbolinks-2.2.0.gemspec
+I, [2014-01-29T21:20:33.546129 #3634]  INFO -- : 0:  uglifier (2.4.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/uglifier-2.4.0.gemspec
+I, [2014-01-29T21:20:33.584816 #3634]  INFO -- : 0:  yaml_db (0.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/bundler/gems/yaml_db-82851a6b5171/yaml_db.gemspec
+I, [2014-01-29T21:20:58.132637 #3656]  INFO -- : 0:  rake (10.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rake-10.1.1.gemspec
+I, [2014-01-29T21:20:58.133189 #3656]  INFO -- : 0:  i18n (0.6.9) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/i18n-0.6.9.gemspec
+I, [2014-01-29T21:20:58.133570 #3656]  INFO -- : 0:  minitest (4.7.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/minitest-4.7.5.gemspec
+I, [2014-01-29T21:20:58.133913 #3656]  INFO -- : 0:  multi_json (1.8.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/multi_json-1.8.4.gemspec
+I, [2014-01-29T21:20:58.134215 #3656]  INFO -- : 0:  atomic (1.1.14) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/atomic-1.1.14.gemspec
+I, [2014-01-29T21:20:58.134503 #3656]  INFO -- : 0:  thread_safe (0.1.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thread_safe-0.1.3.gemspec
+I, [2014-01-29T21:20:58.134784 #3656]  INFO -- : 0:  tzinfo (0.3.38) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/tzinfo-0.3.38.gemspec
+I, [2014-01-29T21:20:58.135073 #3656]  INFO -- : 0:  activesupport (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activesupport-4.0.1.gemspec
+I, [2014-01-29T21:20:58.135349 #3656]  INFO -- : 0:  builder (3.1.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/builder-3.1.4.gemspec
+I, [2014-01-29T21:20:58.135670 #3656]  INFO -- : 0:  erubis (2.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/erubis-2.7.0.gemspec
+I, [2014-01-29T21:20:58.136041 #3656]  INFO -- : 0:  rack (1.5.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-1.5.2.gemspec
+I, [2014-01-29T21:20:58.136380 #3656]  INFO -- : 0:  rack-test (0.6.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rack-test-0.6.2.gemspec
+I, [2014-01-29T21:20:58.136723 #3656]  INFO -- : 0:  actionpack (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionpack-4.0.1.gemspec
+I, [2014-01-29T21:20:58.137047 #3656]  INFO -- : 0:  mime-types (1.25.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mime-types-1.25.1.gemspec
+I, [2014-01-29T21:20:58.137323 #3656]  INFO -- : 0:  polyglot (0.3.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/polyglot-0.3.3.gemspec
+I, [2014-01-29T21:20:58.137588 #3656]  INFO -- : 0:  treetop (1.4.15) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/treetop-1.4.15.gemspec
+I, [2014-01-29T21:20:58.137858 #3656]  INFO -- : 0:  mail (2.5.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/mail-2.5.4.gemspec
+I, [2014-01-29T21:20:58.138125 #3656]  INFO -- : 0:  actionmailer (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/actionmailer-4.0.1.gemspec
+I, [2014-01-29T21:20:58.138449 #3656]  INFO -- : 0:  activemodel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activemodel-4.0.1.gemspec
+I, [2014-01-29T21:20:58.138704 #3656]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2014-01-29T21:20:58.138967 #3656]  INFO -- : 0:  arel (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/arel-4.0.1.gemspec
+I, [2014-01-29T21:20:58.139242 #3656]  INFO -- : 0:  activerecord (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/activerecord-4.0.1.gemspec
+I, [2014-01-29T21:20:58.139508 #3656]  INFO -- : 0:  alias (0.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/alias-0.2.3.gemspec
+I, [2014-01-29T21:20:58.139838 #3656]  INFO -- : 0:  awesome_print (1.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/awesome_print-1.2.0.gemspec
+I, [2014-01-29T21:20:58.140135 #3656]  INFO -- : 0:  bcrypt-ruby (3.1.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bcrypt-ruby-3.1.2.gemspec
+I, [2014-01-29T21:20:58.140384 #3656]  INFO -- : 0:  blankslate (2.1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/blankslate-2.1.2.4.gemspec
+I, [2014-01-29T21:20:58.140644 #3656]  INFO -- : 0:  parslet (1.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/parslet-1.5.0.gemspec
+I, [2014-01-29T21:20:58.140906 #3656]  INFO -- : 0:  toml (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/toml-0.0.4.gemspec
+I, [2014-01-29T21:20:58.141162 #3656]  INFO -- : 0:  binding.repl (0.9.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/binding.repl-0.9.0.gemspec
+I, [2014-01-29T21:20:58.141429 #3656]  INFO -- : 0:  bluecloth (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/bluecloth-2.2.0.gemspec
+I, [2014-01-29T21:20:58.141683 #3656]  INFO -- : 0:  boson (1.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-1.2.4.gemspec
+I, [2014-01-29T21:20:58.141926 #3656]  INFO -- : 0:  boson-more (0.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/boson-more-0.2.2.gemspec
+I, [2014-01-29T21:20:58.142219 #3656]  INFO -- : 0:  bundler (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0@global/specifications/bundler-1.5.1.gemspec
+I, [2014-01-29T21:20:58.142474 #3656]  INFO -- : 0:  clipboard (1.0.5) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/clipboard-1.0.5.gemspec
+I, [2014-01-29T21:20:58.142738 #3656]  INFO -- : 0:  coderay (1.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coderay-1.1.0.gemspec
+I, [2014-01-29T21:20:58.142983 #3656]  INFO -- : 0:  coffee-script-source (1.7.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-01-29T21:20:58.143221 #3656]  INFO -- : 0:  execjs (2.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/execjs-2.0.2.gemspec
+I, [2014-01-29T21:20:58.143461 #3656]  INFO -- : 0:  coffee-script (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-script-2.2.0.gemspec
+I, [2014-01-29T21:20:58.143716 #3656]  INFO -- : 0:  thor (0.18.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/thor-0.18.1.gemspec
+I, [2014-01-29T21:20:58.144015 #3656]  INFO -- : 0:  railties (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/railties-4.0.1.gemspec
+I, [2014-01-29T21:20:58.144284 #3656]  INFO -- : 0:  coffee-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/coffee-rails-4.0.1.gemspec
+I, [2014-01-29T21:20:58.144549 #3656]  INFO -- : 0:  orm_adapter (0.5.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/orm_adapter-0.5.0.gemspec
+I, [2014-01-29T21:20:58.144808 #3656]  INFO -- : 0:  warden (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/warden-1.2.3.gemspec
+I, [2014-01-29T21:20:58.145083 #3656]  INFO -- : 0:  devise (3.2.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/devise-3.2.2.gemspec
+I, [2014-01-29T21:20:58.145348 #3656]  INFO -- : 0:  every_day_irb (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/every_day_irb-1.5.1.gemspec
+I, [2014-01-29T21:20:58.145607 #3656]  INFO -- : 0:  paint (0.8.7) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/paint-0.8.7.gemspec
+I, [2014-01-29T21:20:58.145904 #3656]  INFO -- : 0:  unicode-display_width (0.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/unicode-display_width-0.1.1.gemspec
+I, [2014-01-29T21:20:58.146351 #3656]  INFO -- : 0:  fancy_irb (0.7.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/fancy_irb-0.7.3.gemspec
+I, [2014-01-29T21:20:58.146780 #3656]  INFO -- : 0:  ffi (1.9.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ffi-1.9.3.gemspec
+I, [2014-01-29T21:20:58.147393 #3656]  INFO -- : 0:  g (1.7.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/g-1.7.2.gemspec
+I, [2014-01-29T21:20:58.147694 #3656]  INFO -- : 0:  hike (1.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hike-1.2.3.gemspec
+I, [2014-01-29T21:20:58.148037 #3656]  INFO -- : 0:  hirb (0.7.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/hirb-0.7.1.gemspec
+I, [2014-01-29T21:20:58.148316 #3656]  INFO -- : 0:  spoon (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/spoon-0.0.4.gemspec
+I, [2014-01-29T21:20:58.148591 #3656]  INFO -- : 0:  interactive_editor (0.0.10) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/interactive_editor-0.0.10.gemspec
+I, [2014-01-29T21:20:58.148909 #3656]  INFO -- : 0:  method_locator (0.0.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_locator-0.0.4.gemspec
+I, [2014-01-29T21:20:58.149293 #3656]  INFO -- : 0:  method_source (0.8.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/method_source-0.8.2.gemspec
+I, [2014-01-29T21:20:58.149617 #3656]  INFO -- : 0:  methodfinder (2.0.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/methodfinder-2.0.0.gemspec
+I, [2014-01-29T21:20:58.173959 #3656]  INFO -- : 0:  ori (0.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/ori-0.1.0.gemspec
+I, [2014-01-29T21:20:58.174378 #3656]  INFO -- : 0:  wirb (1.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/wirb-1.0.3.gemspec
+I, [2014-01-29T21:20:58.174974 #3656]  INFO -- : 0:  zucker (13.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/zucker-13.1.gemspec
+I, [2014-01-29T21:20:58.175244 #3656]  INFO -- : 0:  irbtools (1.5.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/irbtools-1.5.1.gemspec
+I, [2014-01-29T21:20:58.175509 #3656]  INFO -- : 0:  jbuilder (1.5.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jbuilder-1.5.3.gemspec
+I, [2014-01-29T21:20:58.175794 #3656]  INFO -- : 0:  jquery-rails (3.1.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-01-29T21:20:58.176093 #3656]  INFO -- : 0:  json (1.8.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/json-1.8.1.gemspec
+I, [2014-01-29T21:20:58.176371 #3656]  INFO -- : 0:  pg (0.17.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/pg-0.17.1.gemspec
+I, [2014-01-29T21:20:58.176761 #3656]  INFO -- : 0:  tilt (1.4.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/tilt-1.4.1.gemspec
+I, [2014-01-29T21:20:58.177118 #3656]  INFO -- : 0:  sprockets (2.10.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sprockets-2.10.1.gemspec
+I, [2014-01-29T21:20:58.177475 #3656]  INFO -- : 0:  sprockets-rails (2.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sprockets-rails-2.0.1.gemspec
+I, [2014-01-29T21:20:58.177773 #3656]  INFO -- : 0:  rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails-4.0.1.gemspec
+I, [2014-01-29T21:20:58.178047 #3656]  INFO -- : 0:  rails_serve_static_assets (0.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_serve_static_assets-0.0.2.gemspec
+I, [2014-01-29T21:20:58.178314 #3656]  INFO -- : 0:  rails_stdout_logging (0.0.3) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_stdout_logging-0.0.3.gemspec
+I, [2014-01-29T21:20:58.178574 #3656]  INFO -- : 0:  rails_12factor (0.0.2) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rails_12factor-0.0.2.gemspec
+I, [2014-01-29T21:20:58.178844 #3656]  INFO -- : 0:  rdoc (4.1.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/rdoc-4.1.1.gemspec
+I, [2014-01-29T21:20:58.179165 #3656]  INFO -- : 0:  sass (3.2.14) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sass-3.2.14.gemspec
+I, [2014-01-29T21:20:58.179465 #3656]  INFO -- : 0:  sass-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sass-rails-4.0.1.gemspec
+I, [2014-01-29T21:20:58.179727 #3656]  INFO -- : 0:  sdoc (0.4.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sdoc-0.4.0.gemspec
+I, [2014-01-29T21:20:58.180018 #3656]  INFO -- : 0:  sextant (0.2.4) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/sextant-0.2.4.gemspec
+I, [2014-01-29T21:20:58.180284 #3656]  INFO -- : 0:  turbolinks (2.2.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/turbolinks-2.2.0.gemspec
+I, [2014-01-29T21:20:58.180565 #3656]  INFO -- : 0:  uglifier (2.4.0) from /home/nik/.rvm/gems/ruby-2.1.0/specifications/uglifier-2.4.0.gemspec
+I, [2014-01-29T21:20:58.193989 #3656]  INFO -- : 0:  yaml_db (0.2.3) from /home/nik/.rvm/gems/ruby-2.1.0/bundler/gems/yaml_db-82851a6b5171/yaml_db.gemspec
+I, [2014-01-29T21:48:56.231364 #4315]  INFO -- : 0:  rake (10.1.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rake-10.1.1.gemspec
+I, [2014-01-29T21:48:56.232433 #4315]  INFO -- : 0:  i18n (0.6.9) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/i18n-0.6.9.gemspec
+I, [2014-01-29T21:48:58.253443 #4315]  INFO -- : 0:  minitest (4.7.5) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/minitest-4.7.5.gemspec
+I, [2014-01-29T21:48:58.254884 #4315]  INFO -- : 0:  multi_json (1.8.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/multi_json-1.8.4.gemspec
+I, [2014-01-29T21:48:58.255940 #4315]  INFO -- : 0:  atomic (1.1.14) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/atomic-1.1.14.gemspec
+I, [2014-01-29T21:48:58.256953 #4315]  INFO -- : 0:  thread_safe (0.1.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/thread_safe-0.1.3.gemspec
+I, [2014-01-29T21:48:58.257751 #4315]  INFO -- : 0:  tzinfo (0.3.38) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/tzinfo-0.3.38.gemspec
+I, [2014-01-29T21:49:00.735077 #4315]  INFO -- : 0:  activesupport (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/activesupport-4.0.1.gemspec
+I, [2014-01-29T21:49:00.736017 #4315]  INFO -- : 0:  builder (3.1.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/builder-3.1.4.gemspec
+I, [2014-01-29T21:49:00.736670 #4315]  INFO -- : 0:  erubis (2.7.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/erubis-2.7.0.gemspec
+I, [2014-01-29T21:49:00.737249 #4315]  INFO -- : 0:  rack (1.5.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rack-1.5.2.gemspec
+I, [2014-01-29T21:49:00.737813 #4315]  INFO -- : 0:  rack-test (0.6.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rack-test-0.6.2.gemspec
+I, [2014-01-29T21:49:03.244319 #4315]  INFO -- : 0:  actionpack (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/actionpack-4.0.1.gemspec
+I, [2014-01-29T21:49:03.245426 #4315]  INFO -- : 0:  mime-types (1.25.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/mime-types-1.25.1.gemspec
+I, [2014-01-29T21:49:03.246396 #4315]  INFO -- : 0:  polyglot (0.3.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/polyglot-0.3.3.gemspec
+I, [2014-01-29T21:49:03.247307 #4315]  INFO -- : 0:  treetop (1.4.15) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/treetop-1.4.15.gemspec
+I, [2014-01-29T21:49:03.248277 #4315]  INFO -- : 0:  mail (2.5.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/mail-2.5.4.gemspec
+I, [2014-01-29T21:49:04.947884 #4315]  INFO -- : 0:  actionmailer (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/actionmailer-4.0.1.gemspec
+I, [2014-01-29T21:49:06.725425 #4315]  INFO -- : 0:  activemodel (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/activemodel-4.0.1.gemspec
+I, [2014-01-29T21:49:08.612555 #4315]  INFO -- : 0:  activerecord-deprecated_finders (1.0.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/activerecord-deprecated_finders-1.0.3.gemspec
+I, [2014-01-29T21:49:10.269727 #4315]  INFO -- : 0:  arel (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/arel-4.0.1.gemspec
+I, [2014-01-29T21:49:12.509346 #4315]  INFO -- : 0:  activerecord (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/activerecord-4.0.1.gemspec
+I, [2014-01-29T21:49:13.812437 #4315]  INFO -- : 0:  alias (0.2.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/alias-0.2.3.gemspec
+I, [2014-01-29T21:49:15.588940 #4315]  INFO -- : 0:  awesome_print (1.2.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/awesome_print-1.2.0.gemspec
+I, [2014-01-29T21:49:15.590336 #4315]  INFO -- : 0:  bcrypt-ruby (3.1.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/bcrypt-ruby-3.1.2.gemspec
+I, [2014-01-29T21:49:17.216759 #4315]  INFO -- : 0:  blankslate (2.1.2.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/blankslate-2.1.2.4.gemspec
+I, [2014-01-29T21:49:20.236698 #4315]  INFO -- : 0:  parslet (1.5.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/parslet-1.5.0.gemspec
+I, [2014-01-29T21:49:21.483392 #4315]  INFO -- : 0:  toml (0.0.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/toml-0.0.4.gemspec
+I, [2014-01-29T21:49:23.559220 #4315]  INFO -- : 0:  binding.repl (0.9.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/binding.repl-0.9.0.gemspec
+I, [2014-01-29T21:49:29.608894 #4315]  INFO -- : 0:  bluecloth (2.2.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/bluecloth-2.2.0.gemspec
+I, [2014-01-29T21:49:31.377397 #4315]  INFO -- : 0:  boson (1.2.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/boson-1.2.4.gemspec
+I, [2014-01-29T21:49:33.391585 #4315]  INFO -- : 0:  boson-more (0.2.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/boson-more-0.2.2.gemspec
+I, [2014-01-29T21:49:35.314493 #4315]  INFO -- : 0:  clipboard (1.0.5) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/clipboard-1.0.5.gemspec
+I, [2014-01-29T21:49:35.315270 #4315]  INFO -- : 0:  coderay (1.1.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/coderay-1.1.0.gemspec
+I, [2014-01-29T21:49:37.534120 #4315]  INFO -- : 0:  coffee-script-source (1.7.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/coffee-script-source-1.7.0.gemspec
+I, [2014-01-29T21:49:37.534823 #4315]  INFO -- : 0:  execjs (2.0.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/execjs-2.0.2.gemspec
+I, [2014-01-29T21:49:37.535176 #4315]  INFO -- : 0:  coffee-script (2.2.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/coffee-script-2.2.0.gemspec
+I, [2014-01-29T21:49:37.535529 #4315]  INFO -- : 0:  thor (0.18.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/thor-0.18.1.gemspec
+I, [2014-01-29T21:49:39.037473 #4315]  INFO -- : 0:  railties (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/railties-4.0.1.gemspec
+I, [2014-01-29T21:49:40.218946 #4315]  INFO -- : 0:  coffee-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/coffee-rails-4.0.1.gemspec
+I, [2014-01-29T21:49:40.220269 #4315]  INFO -- : 0:  orm_adapter (0.5.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/orm_adapter-0.5.0.gemspec
+I, [2014-01-29T21:49:40.221537 #4315]  INFO -- : 0:  warden (1.2.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/warden-1.2.3.gemspec
+I, [2014-01-29T21:49:42.477154 #4315]  INFO -- : 0:  devise (3.2.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/devise-3.2.2.gemspec
+I, [2014-01-29T21:49:44.261364 #4315]  INFO -- : 0:  every_day_irb (1.5.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/every_day_irb-1.5.1.gemspec
+I, [2014-01-29T21:49:46.517042 #4315]  INFO -- : 0:  paint (0.8.7) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/paint-0.8.7.gemspec
+I, [2014-01-29T21:49:54.596980 #4315]  INFO -- : 0:  unicode-display_width (0.1.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/unicode-display_width-0.1.1.gemspec
+I, [2014-01-29T21:49:55.777564 #4315]  INFO -- : 0:  fancy_irb (0.7.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/fancy_irb-0.7.3.gemspec
+I, [2014-01-29T21:49:55.778550 #4315]  INFO -- : 0:  ffi (1.9.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/ffi-1.9.3.gemspec
+I, [2014-01-29T21:49:56.871102 #4315]  INFO -- : 0:  g (1.7.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/g-1.7.2.gemspec
+I, [2014-01-29T21:49:56.872832 #4315]  INFO -- : 0:  hike (1.2.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/hike-1.2.3.gemspec
+I, [2014-01-29T21:49:58.182958 #4315]  INFO -- : 0:  hirb (0.7.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/hirb-0.7.1.gemspec
+I, [2014-01-29T21:49:59.437414 #4315]  INFO -- : 0:  spoon (0.0.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/spoon-0.0.4.gemspec
+I, [2014-01-29T21:50:00.581544 #4315]  INFO -- : 0:  interactive_editor (0.0.10) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/interactive_editor-0.0.10.gemspec
+I, [2014-01-29T21:50:02.347530 #4315]  INFO -- : 0:  method_locator (0.0.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/method_locator-0.0.4.gemspec
+I, [2014-01-29T21:50:03.787753 #4315]  INFO -- : 0:  method_source (0.8.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/method_source-0.8.2.gemspec
+I, [2014-01-29T21:50:10.890829 #4315]  INFO -- : 0:  methodfinder (2.0.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/methodfinder-2.0.0.gemspec
+I, [2014-01-29T21:50:12.807724 #4315]  INFO -- : 0:  ori (0.1.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/ori-0.1.0.gemspec
+I, [2014-01-29T21:50:19.287366 #4315]  INFO -- : 0:  wirb (1.0.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/wirb-1.0.3.gemspec
+I, [2014-01-29T21:50:21.339969 #4315]  INFO -- : 0:  zucker (13.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/zucker-13.1.gemspec
+I, [2014-01-29T21:50:22.901102 #4315]  INFO -- : 0:  irbtools (1.5.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/irbtools-1.5.1.gemspec
+I, [2014-01-29T21:50:24.915856 #4315]  INFO -- : 0:  jbuilder (1.5.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/jbuilder-1.5.3.gemspec
+I, [2014-01-29T21:50:27.605688 #4315]  INFO -- : 0:  jquery-rails (3.1.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/jquery-rails-3.1.0.gemspec
+I, [2014-01-29T21:50:27.607059 #4315]  INFO -- : 0:  json (1.8.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/json-1.8.1.gemspec
+I, [2014-01-29T21:50:36.245292 #4315]  INFO -- : 0:  pg (0.17.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/pg-0.17.1.gemspec
+I, [2014-01-29T21:50:36.246765 #4315]  INFO -- : 0:  bundler (1.5.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353@global/specifications/bundler-1.5.1.gemspec
+I, [2014-01-29T21:50:36.247745 #4315]  INFO -- : 0:  tilt (1.4.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/tilt-1.4.1.gemspec
+I, [2014-01-29T21:50:36.248739 #4315]  INFO -- : 0:  sprockets (2.10.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/sprockets-2.10.1.gemspec
+I, [2014-01-29T21:50:42.655489 #4315]  INFO -- : 0:  sprockets-rails (2.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/sprockets-rails-2.0.1.gemspec
+I, [2014-01-29T21:50:47.576027 #4315]  INFO -- : 0:  rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rails-4.0.1.gemspec
+I, [2014-01-29T21:50:49.208843 #4315]  INFO -- : 0:  rails_serve_static_assets (0.0.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rails_serve_static_assets-0.0.2.gemspec
+I, [2014-01-29T21:50:51.052255 #4315]  INFO -- : 0:  rails_stdout_logging (0.0.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rails_stdout_logging-0.0.3.gemspec
+I, [2014-01-29T21:50:54.222775 #4315]  INFO -- : 0:  rails_12factor (0.0.2) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rails_12factor-0.0.2.gemspec
+I, [2014-01-29T21:51:01.943204 #4315]  INFO -- : 0:  rdoc (4.1.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/rdoc-4.1.1.gemspec
+I, [2014-01-29T21:51:05.138577 #4315]  INFO -- : 0:  sass (3.2.14) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/sass-3.2.14.gemspec
+I, [2014-01-29T21:51:07.465156 #4315]  INFO -- : 0:  sass-rails (4.0.1) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/sass-rails-4.0.1.gemspec
+I, [2014-01-29T21:51:10.011094 #4315]  INFO -- : 0:  sdoc (0.4.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/sdoc-0.4.0.gemspec
+I, [2014-01-29T21:51:11.939406 #4315]  INFO -- : 0:  sextant (0.2.4) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/sextant-0.2.4.gemspec
+I, [2014-01-29T21:51:14.152513 #4315]  INFO -- : 0:  turbolinks (2.2.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/turbolinks-2.2.0.gemspec
+I, [2014-01-29T21:51:14.153756 #4315]  INFO -- : 0:  uglifier (2.4.0) from /home/nik/.rvm/gems/ruby-2.0.0-p353/specifications/uglifier-2.4.0.gemspec
+I, [2014-01-29T21:51:14.193123 #4315]  INFO -- : 0:  yaml_db (0.2.3) from /home/nik/.rvm/gems/ruby-2.0.0-p353/bundler/gems/yaml_db-82851a6b5171/yaml_db.gemspec

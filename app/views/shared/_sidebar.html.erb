@@ -1,0 +1,23 @@
+<h3>Metadata</h3>
+<p>
+  <%= link_to("Home", post_path('Welcome')) %>
+</p>
+
+<div class="box">
+  <p class="image"><%= image_tag 'thinking.jpg', :with => 100, :alt => 'Leslie' %></p>
+
+  <p class="last">
+    This is the website of Leslie Viljoen.
+    <%= link_to "More info ", post_path('About This Website'), :style => "color:white" %>
+  </p>
+</div>
+
+<hr />
+
+<div>
+  <div id="monthwise">
+    <%#= monthwise('year', 'month', 'entrylist').html_safe %>
+    <%= tagwise('month', 'entrylist').html_safe %>
+  </div>
+</div>
+

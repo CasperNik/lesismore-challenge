@@ -1,0 +1,1274 @@
+  [1m[36m (113.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (117.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePosts (20130530104354)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (237.8ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "title" character varying(255), "body" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20130530104354"]]
+  [1m[36m (25.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddTagToPost (20130531073637)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (9.5ms)[0m  [1mALTER TABLE "posts" ADD COLUMN "tag" character varying(255)[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20130531073637"]]
+  [1m[36m (16.8ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20140123061619)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (229.5ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (53.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (93.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140123061619"]]
+  [1m[36m (26.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (93.5ms)[0m  DROP TABLE "posts"
+  [1m[36m (351.1ms)[0m  [1mCREATE TABLE "posts" ("id" serial primary key, "title" character varying(255), "body" text, "created_at" timestamp, "updated_at" timestamp, "tag" character varying(255)) [0m
+  [1m[35m (104.5ms)[0m  DROP TABLE "users"
+  [1m[36m (243.6ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (127.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (183.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "posts"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-28 18:34:14 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (1.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (11.7ms)
+  [1m[36mPost Load (1.4ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (11.3ms)
+  Rendered layouts/_user_widget.html.erb (0.7ms)
+Completed 200 OK in 717ms (Views: 679.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-28 18:34:16 +1300
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (31.1ms)[0m  CREATE TABLE "posts" ("id" serial primary key, "title" character varying(255), "body" text, "created_at" timestamp, "updated_at" timestamp, "tag" character varying(255)) 
+  [1m[36m (23.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (33.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (20.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (5.6ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) 
+  [1m[36m (13.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (5.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140123061619')[0m
+  [1m[35m (10.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130530104354')
+  [1m[36m (11.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130531073637')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (1.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (16.9ms)
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (9.5ms)
+  Rendered layouts/_user_widget.html.erb (0.8ms)
+Completed 200 OK in 446ms (Views: 396.1ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 22:05:29 +1300
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 22:06:09 +1300
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (7.7ms)
+  Rendered layouts/_user_widget.html.erb (0.2ms)
+Completed 200 OK in 29ms (Views: 18.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:10 +1300
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (1.2ms)
+  [1m[36mPost Load (1.0ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (6.9ms)
+  Rendered layouts/_user_widget.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:13 +1300
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (1.7ms)
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (7.2ms)
+  Rendered layouts/_user_widget.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:16 +1300
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (8.2ms)
+  Rendered layouts/_user_widget.html.erb (0.4ms)
+Completed 200 OK in 62ms (Views: 19.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:40 +1300
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (1.6ms)
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (9.2ms)
+  Rendered layouts/_user_widget.html.erb (0.3ms)
+Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 22:06:43 +1300
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (10.5ms)
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (8.7ms)
+  Rendered layouts/_user_widget.html.erb (0.8ms)
+Completed 200 OK in 126ms (Views: 97.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:00 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 22:07:01 +1300
+
+
+Started GET "/posts/16" for 127.0.0.1 at 2014-01-29 22:07:04 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mPost Load (3.0ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 16]]
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (8.9ms)
+  Rendered layouts/_user_widget.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 24.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/9" for 127.0.0.1 at 2014-01-29 22:07:05 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered posts/show.html.erb within layouts/application (70.9ms)
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered shared/_sidebar.html.erb (7.9ms)
+  Rendered layouts/_user_widget.html.erb (0.3ms)
+Completed 200 OK in 92ms (Views: 88.4ms | ActiveRecord: 1.5ms)
+  [1m[36mPost Load (4.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-01-29 23:00:47 +1300
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/devise-3.2.2/app/views/devise/shared/_links.erb (0.8ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/devise-3.2.2/app/views/devise/sessions/new.html.erb within layouts/application (50.8ms)
+  [1m[35mPost Load (0.8ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered shared/_sidebar.html.erb (14.8ms)
+  Rendered layouts/_user_widget.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 74.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 23:18:21 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (9.8ms)
+ERROR: compiling _app_views_shared__sidebar_html_erb__715989749908330319_32322320 RAISED /mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( tagwise('month', 'entrylist').html_safe );@...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d=( tagwise('month', 'entrylist').html_safe );@output_buffer...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:21: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:22: unknown regexp options - dv
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: unterminated string meets end of file
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: syntax error, unexpected end-of-input, expecting ')'
+Function body:           def _app_views_shared__sidebar_html_erb__715989749908330319_32322320(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "shared/_sidebar";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_append='<h3>Metadata</h3>
+<p>
+  ';@output_buffer.append=( link_to("Home", post_path('Welcome')) );@output_buffer.safe_append='
+</p>
+
+<div class="box">
+  <p class="image">';@output_buffer.append=( image_tag 'thinking.jpg', :with => 100, :alt => 'Leslie' );@output_buffer.safe_append='</p>
+
+  <p class="last">
+    This is the website of Leslie Viljoen.
+    ';@output_buffer.append=( link_to "More info ", post_path('About This Website'), :style => "color:white" );@output_buffer.safe_append='
+  </p>
+</div>
+
+<hr />
+
+<div>
+  <div id="monthwise">
+    ';@output_buffer.append=( #monthwise('year', 'month', 'entrylist').html_safe );@output_buffer.safe_append='
+    ';@output_buffer.append=( tagwise('month', 'entrylist').html_safe );@output_buffer.safe_append='
+  </div>
+</div>
+
+';@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:299:in `module_eval'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:299:in `compile'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:248:in `block in compile!'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:236:in `synchronize'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:236:in `compile!'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:142:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:161:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:141:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/partial_renderer.rb:278:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:47:in `render_partial'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:21:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/layouts/application.html.erb:34:in `_app_views_layouts_application_html_erb___1539706082036963116_38041900'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:143:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:161:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:141:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/template_renderer.rb:17:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:42:in `render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:23:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:127:in `_render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:97:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/mime_responds.rb:191:in `respond_to'
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/controllers/posts_controller.rb:26:in `show'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/base.rb:189:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:413:in `_run__2363007089694207399__process_action__callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/base.rb:136:in `process'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:44:in `process'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal.rb:195:in `dispatch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal.rb:231:in `block in action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:80:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:48:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/journey/router.rb:71:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/journey/router.rb:59:in `each'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/journey/router.rb:59:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:680:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/flash.rb:241:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/query_cache.rb:36:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/migration.rb:369:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:373:in `_run__3769030069681628449__call__callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/rack/logger.rb:38:in `call_app'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/rack/logger.rb:20:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/tagged_logging.rb:25:in `tagged'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/tagged_logging.rb:67:in `tagged'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/rack/logger.rb:20:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/engine.rb:511:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/application.rb:97:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered shared/_sidebar.html.erb (2.5ms)
+Completed 500 Internal Server Error in 108ms
+
+ActionView::Template::Error (/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( tagwise('month', 'entrylist').html_safe );@...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d=( tagwise('month', 'entrylist').html_safe );@output_buffer...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:21: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:22: unknown regexp options - dv
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: unterminated string meets end of file
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: syntax error, unexpected end-of-input, expecting ')'):
+    17: <div>
+    18:   <div id="monthwise">
+    19:     <%= #monthwise('year', 'month', 'entrylist').html_safe %>
+    20:     <%= tagwise('month', 'entrylist').html_safe %>
+    21:   </div>
+    22: </div>
+  app/views/layouts/application.html.erb:34:in `_app_views_layouts_application_html_erb___1539706082036963116_38041900'
+  app/controllers/posts_controller.rb:26:in `show'
+
+
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 23:20:18 +1300
+Processing by PostsController#show as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1[0m
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+ERROR: compiling _app_views_shared__sidebar_html_erb__715989749908330319_32322320 RAISED /mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( tagwise('month', 'entrylist').html_safe );@...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d=( tagwise('month', 'entrylist').html_safe );@output_buffer...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:21: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:22: unknown regexp options - dv
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: unterminated string meets end of file
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: syntax error, unexpected end-of-input, expecting ')'
+Function body:           def _app_views_shared__sidebar_html_erb__715989749908330319_32322320(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "shared/_sidebar";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_append='<h3>Metadata</h3>
+<p>
+  ';@output_buffer.append=( link_to("Home", post_path('Welcome')) );@output_buffer.safe_append='
+</p>
+
+<div class="box">
+  <p class="image">';@output_buffer.append=( image_tag 'thinking.jpg', :with => 100, :alt => 'Leslie' );@output_buffer.safe_append='</p>
+
+  <p class="last">
+    This is the website of Leslie Viljoen.
+    ';@output_buffer.append=( link_to "More info ", post_path('About This Website'), :style => "color:white" );@output_buffer.safe_append='
+  </p>
+</div>
+
+<hr />
+
+<div>
+  <div id="monthwise">
+    ';@output_buffer.append=( #monthwise('year', 'month', 'entrylist').html_safe );@output_buffer.safe_append='
+    ';@output_buffer.append=( tagwise('month', 'entrylist').html_safe );@output_buffer.safe_append='
+  </div>
+</div>
+
+';@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:299:in `module_eval'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:299:in `compile'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:248:in `block in compile!'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:236:in `synchronize'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:236:in `compile!'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:142:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:161:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:141:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/partial_renderer.rb:306:in `render_partial'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/partial_renderer.rb:279:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/partial_renderer.rb:278:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:47:in `render_partial'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:21:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/helpers/rendering_helper.rb:24:in `render'
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/layouts/application.html.erb:34:in `_app_views_layouts_application_html_erb___1539706082036963116_38041900'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:143:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:161:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/template.rb:141:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/template_renderer.rb:47:in `render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/template_renderer.rb:17:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:42:in `render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_view/renderer/renderer.rb:23:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:127:in `_render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/streaming.rb:219:in `_render_template'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:120:in `render_to_body'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rendering.rb:33:in `render_to_body'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/renderers.rb:26:in `render_to_body'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:97:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/core_ext/benchmark.rb:12:in `ms'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/mime_responds.rb:191:in `respond_to'
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/controllers/posts_controller.rb:26:in `show'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/base.rb:189:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:413:in `_run__2363007089694207399__process_action__callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `block in instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/notifications.rb:159:in `instrument'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/base.rb:136:in `process'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/abstract_controller/rendering.rb:44:in `process'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal.rb:195:in `dispatch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_controller/metal.rb:231:in `block in action'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:80:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:48:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/journey/router.rb:71:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/journey/router.rb:59:in `each'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/journey/router.rb:59:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/routing/route_set.rb:680:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/etag.rb:23:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/conditionalget.rb:25:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/head.rb:11:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/flash.rb:241:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:225:in `context'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/session/abstract/id.rb:220:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/cookies.rb:486:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/query_cache.rb:36:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-4.0.1/lib/active_record/migration.rb:369:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:373:in `_run__3769030069681628449__call__callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/callbacks.rb:80:in `run_callbacks'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/reloader.rb:64:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/rack/logger.rb:38:in `call_app'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/rack/logger.rb:20:in `block in call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/tagged_logging.rb:67:in `block in tagged'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/tagged_logging.rb:25:in `tagged'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/tagged_logging.rb:67:in `tagged'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/rack/logger.rb:20:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/methodoverride.rb:21:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/runtime.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-4.0.1/lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/static.rb:64:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/sendfile.rb:112:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/engine.rb:511:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/railties-4.0.1/lib/rails/application.rb:97:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/lock.rb:17:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/content_length.rb:14:in `call'
+/home/nik/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.5.2/lib/rack/handler/webrick.rb:60:in `service'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/nik/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered shared/_sidebar.html.erb (7.3ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+..._buffer.append=( tagwise('month', 'entrylist').html_safe );@...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:20: syntax error, unexpected tIDENTIFIER, expecting ')'
+...d=( tagwise('month', 'entrylist').html_safe );@output_buffer...
+...                               ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:21: syntax error, unexpected '<', expecting ')'
+  </div>
+   ^
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:22: unknown regexp options - dv
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: unterminated string meets end of file
+/mnt/86903E41903E384F/Dropbox/RubyProjects/lesismore-challenge/app/views/shared/_sidebar.html.erb:24: syntax error, unexpected end-of-input, expecting ')'):
+    17: <div>
+    18:   <div id="monthwise">
+    19:     <%= #monthwise('year', 'month', 'entrylist').html_safe %>
+    20:     <%= tagwise('month', 'entrylist').html_safe %>
+    21:   </div>
+    22: </div>
+  app/views/layouts/application.html.erb:34:in `_app_views_layouts_application_html_erb___1539706082036963116_38041900'
+  app/controllers/posts_controller.rb:26:in `show'
+
+
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+Processing by PostsController#show as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT "posts"."tag" FROM "posts" WHERE ("posts"."tag" IS NOT NULL)[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."tag" = 'Ruby'
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."tag" = 'Meta'[0m
+  [1m[35mPost Load (0.5ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."tag" = 'Diabetes'
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."tag" = 'Ubuntu'[0m
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."tag" = 'Interactive Fiction'
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."tag" = 'Darwin'[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."tag" = 'Minecraft'
+  Rendered shared/_sidebar.html.erb (39.0ms)
+  Rendered layouts/_user_widget.html.erb (1.0ms)
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 23:20:23 +1300
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2014-01-29 23:20:34 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (3.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered posts/show.html.erb within layouts/application (44.2ms)
+  Rendered shared/_sidebar.html.erb (4.0ms)
+  Rendered layouts/_user_widget.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 60.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2014-01-29 23:20:36 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (15.0ms)
+  Rendered shared/_sidebar.html.erb (3.8ms)
+  Rendered layouts/_user_widget.html.erb (0.3ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered posts/show.html.erb within layouts/application (10.0ms)
+  Rendered shared/_sidebar.html.erb (3.9ms)
+  Rendered layouts/_user_widget.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 23.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 23:28:17 +1300
+
+
+Started GET "/posts/Welcome" for 127.0.0.1 at 2014-01-29 23:28:21 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"Welcome"}
+  [1m[35mPost Load (0.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1
+  Rendered posts/show.html.erb within layouts/application (1.5ms)
+  Rendered shared/_sidebar.html.erb (4.0ms)
+  Rendered layouts/_user_widget.html.erb (0.3ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/Welcome" for 127.0.0.1 at 2014-01-29 23:30:59 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"Welcome"}
+  [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1[0m
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+  Rendered shared/_sidebar.html.erb (4.0ms)
+  Rendered layouts/_user_widget.html.erb (0.2ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 23:31:00 +1300
+
+
+Started GET "/posts/11" for 127.0.0.1 at 2014-01-29 23:31:03 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered posts/show.html.erb within layouts/application (3.7ms)
+  Rendered shared/_sidebar.html.erb (4.5ms)
+  Rendered layouts/_user_widget.html.erb (0.4ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/11" for 127.0.0.1 at 2014-01-29 23:32:26 +1300
+
+RuntimeError (Circular dependency detected while autoloading constant MonthwiseHelper):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started GET "/posts/11" for 127.0.0.1 at 2014-01-29 23:32:51 +1300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+RuntimeError (Circular dependency detected while autoloading constant MonthwiseHelper):
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/posts_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.8ms)
+  Rendered /home/nik/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-4.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.2ms)
+
+
+Started GET "/posts/11" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mPost Load (2.6ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered posts/show.html.erb within layouts/application (41.7ms)
+  Rendered shared/_sidebar.html.erb (5.4ms)
+  Rendered layouts/_user_widget.html.erb (0.8ms)
+Completed 200 OK in 133ms (Views: 120.1ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/blueprint/forms.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/screen.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/ie.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/grid.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/reset.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/typography.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/coderay.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/site.css?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/reset.css" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/typography.css" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/grid.css" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/blueprint/forms.css" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 23:34:18 +1300
+
+
+Started GET "/posts/Welcome" for 127.0.0.1 at 2014-01-29 23:34:25 +1300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"Welcome"}
+  [1m[36mPost Load (0.6ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."title" = 'Welcome' LIMIT 1[0m
+  Rendered posts/show.html.erb within layouts/application (1.9ms)
+  Rendered shared/_sidebar.html.erb (5.9ms)
+  Rendered layouts/_user_widget.html.erb (0.2ms)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.6ms)

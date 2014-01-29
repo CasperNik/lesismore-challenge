@@ -1,0 +1,134 @@
+.CodeRay {
+  padding: 0.5em;
+  margin-bottom: 1.3em;
+  background-color: #1e1e27;
+  border: 1px solid #5f5f68;
+  font: 1.1em Monaco, 'Courier New', 'Terminal', monospace;
+  color: #cfbfad;
+}
+.CodeRay pre {
+  padding: 0px;
+  margin: 0px;
+  overflow: auto;
+  background-color: transparent;
+  border: none;
+}
+
+div.CodeRay { }
+
+span.CodeRay { white-space: pre; border: 0px; padding: 2px }
+
+table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
+table.CodeRay td { padding: 2px 4px; vertical-align: top }
+
+.CodeRay .line_numbers, .CodeRay .no {
+  background-color: #32323b;
+  color: gray;
+  text-align: right;
+}
+.CodeRay .line_numbers tt { font-weight: bold }
+.CodeRay .no { padding: 0px 4px }
+
+ol.CodeRay { font-size: 10pt }
+ol.CodeRay li { white-space: pre }
+
+.CodeRay .debug { color:white ! important; background:blue ! important; }
+
+.CodeRay .af { color:#00C }
+.CodeRay .an { color:#007 }
+.CodeRay .av { color:#700 }
+.CodeRay .aw { color:#C00 }
+.CodeRay .bi { color:#509; font-weight:bold }
+.CodeRay .c  { color:#c58602; }
+
+.CodeRay .ch { color:#04D }
+.CodeRay .ch .k { color:#ffcd8b; background-color:#404040 }
+.CodeRay .ch .dl { color:#ffcd8b; background-color:#404040 }
+
+.CodeRay .cl { color:#ff8bff; font-weight:bold }
+.CodeRay .co { color:#d275d4; font-weight:bold }
+.CodeRay .cr { color:#0A0 }
+.CodeRay .cv { color:#369 }
+.CodeRay .df { color:#099; font-weight:bold }
+.CodeRay .di { color:#088; font-weight:bold }
+.CodeRay .dl { color:black }
+.CodeRay .do { color:#970 }
+.CodeRay .ds { color:#D42; font-weight:bold }
+.CodeRay .e  { color:#666; font-weight:bold }
+.CodeRay .en { color:#800; font-weight:bold }
+.CodeRay .er { color:#F00; background-color:#FAA }
+.CodeRay .ex { color:#F00; font-weight:bold }
+.CodeRay .fl { color:#60E; font-weight:bold }
+.CodeRay .fu { color:#ff8bff; font-weight:bold }
+.CodeRay .gv { color:#d70; font-weight:bold }
+.CodeRay .hx { color:#058; font-weight:bold }
+.CodeRay .i  { color:#e1a368; font-weight:bold }
+.CodeRay .ic { color:#B44; font-weight:bold }
+
+.CodeRay .il { background: #404040 }
+.CodeRay .il .il { background: #404040 }
+.CodeRay .il .il .il { background: #404040 }
+.CodeRay .il .idl { font-weight: bold; color: #ffcd8b }
+
+.CodeRay .in { color:#B2B; font-weight:bold }
+.CodeRay .iv { color:#ff8bff }
+.CodeRay .la { color:#970; font-weight:bold }
+.CodeRay .lv { color:#963 }
+.CodeRay .oc { color:#40E; font-weight:bold }
+.CodeRay .of { color:#000; font-weight:bold }
+.CodeRay .op { }
+.CodeRay .pc { color:#ffcd8b; font-weight:bold }
+.CodeRay .pd { color:#369; font-weight:bold }
+.CodeRay .pp { color:#579 }
+.CodeRay .pt { color:#339; font-weight:bold }
+.CodeRay .r  { color:#409090; font-weight:bold }
+
+.CodeRay .rx { background-color:#404040 }
+.CodeRay .rx .k { color:#ffcd8b }
+.CodeRay .rx .dl { color:#ffcd8b }
+.CodeRay .rx .mod { color:#ffcd8b }
+.CodeRay .rx .fu  { color:#ffcd8b; font-weight: bold }
+
+.CodeRay .s  { background-color:#404040 }
+.CodeRay .s  .s { background-color:#404040 }
+.CodeRay .s  .s  .s { background-color:#404040 }
+.CodeRay .s  .k { color:#ffcd8b }
+.CodeRay .s  .dl { color:#ffcd8b }
+
+.CodeRay .sh { background-color:#f0fff0 }
+.CodeRay .sh .k { color:#2B2 }
+.CodeRay .sh .dl { color:#161 }
+
+.CodeRay .sy { color:#ffcd8b }
+.CodeRay .sy .k { color:#A60 }
+.CodeRay .sy .dl { color:#630 }
+
+.CodeRay .ta { color:#070 }
+.CodeRay .tf { color:#070; font-weight:bold }
+.CodeRay .ts { color:#D70; font-weight:bold }
+.CodeRay .ty { color:#339; font-weight:bold }
+.CodeRay .v  { color:#036 }
+.CodeRay .xt { color:#444 }
+
+# SYNTAX colours
+
+.CodeRay pre { background:#002241; border:1px solid #000; color:#ccc; font-family: Courier, monospace }
+.CodeRay .doctype,
+.CodeRay .key,
+.CodeRay .instance-variable,
+.CodeRay .attribute-name { color:#eeefff }
+.CodeRay .symbol,
+.CodeRay .integer,
+.CodeRay .float { color:#ff658b }
+.CodeRay .string { color:#2dc900 }
+.CodeRay .keyword { color:#ff9d00 }
+.CodeRay .function,
+.CodeRay .class { color:#ffdc00 }
+.CodeRay .regexp,
+.CodeRay .constant,
+.CodeRay .tag { color:#7afbff }
+.CodeRay .modifier,
+.CodeRay .predefined-constant { color:#ff84e4 }
+.CodeRay .comment { color:#008af7 }
+.CodeRay .tag { color:# }
+.CodeRay .error { color:#ecc }
